@@ -1,0 +1,12 @@
+.print_ignore {
+    display: none;
+}
+TABLE {
+    BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; COLOR: black; BORDER-BOTTOM: black 1px solid; BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: white
+}
+TABLE TR TD {
+    BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; COLOR: black; BORDER-BOTTOM: black 1px solid; BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: white
+}
+TABLE TR TH {
+    BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; COLOR: black; BORDER-BOTTOM: black 1px solid; BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: white
+}

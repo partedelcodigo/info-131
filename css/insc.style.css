@@ -1,0 +1,949 @@
+.nowrap {
+    WHITE-SPACE: nowrap
+}
+DIV.nowrap {
+    PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+FORM {
+    PADDING-RIGHT: 0px; DISPLAY: inline; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+A IMG {
+    BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+#tableuserrights TD {
+    VERTICAL-ALIGN: middle
+}
+#tablespecificuserrights TD {
+    VERTICAL-ALIGN: middle
+}
+#tabledatabases TD {
+    VERTICAL-ALIGN: middle
+}
+.icon {
+    MARGIN-LEFT: 0.3em; VERTICAL-ALIGN: middle; MARGIN-RIGHT: 0.3em
+}
+TD .icon {
+    MARGIN: 0px
+}
+.selectallarrow {
+    MARGIN-LEFT: 0.6em; MARGIN-RIGHT: 0.3em
+}
+DIV#tablestatistics {
+    MARGIN-BOTTOM: 0.5em; PADDING-BOTTOM: 0.5em; BORDER-BOTTOM: #669999 0.1em solid
+}
+DIV#tablestatistics TABLE {
+    FLOAT: left; MARGIN-BOTTOM: 0.5em; MARGIN-RIGHT: 0.5em
+}
+DIV#tablestatistics TABLE CAPTION {
+    MARGIN-RIGHT: 0.5em
+}
+BODY#body_leftFrame {
+    BACKGROUND-COLOR: #fb7922
+}
+DIV#pmalogo {
+    MARGIN-BOTTOM: 0.5em; PADDING-BOTTOM: 0.5em; BORDER-BOTTOM: #669999 0.1em solid; TEXT-ALIGN: center
+}
+DIV#leftframelinks {
+    MARGIN-BOTTOM: 0.5em; PADDING-BOTTOM: 0.5em; BORDER-BOTTOM: #669999 0.1em solid; TEXT-ALIGN: center
+}
+DIV#databaseList {
+    MARGIN-BOTTOM: 0.5em; PADDING-BOTTOM: 0.5em; BORDER-BOTTOM: #669999 0.1em solid; TEXT-ALIGN: center
+}
+DIV#leftframelinks .icon {
+    PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; VERTICAL-ALIGN: middle; PADDING-TOP: 0px
+}
+DIV#leftframelinks A:hover {
+    BACKGROUND-COLOR: #669999
+}
+DIV#left_tableList UL {
+    PADDING-RIGHT: 0px; PADDING-LEFT: 0px; LIST-STYLE-POSITION: outside; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none; BACKGROUND-COLOR: #fb7922
+}
+DIV#left_tableList LI {
+    PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; WHITE-SPACE: nowrap
+}
+DIV#left_tableList LI:hover {
+    BACKGROUND-COLOR: #f8e8a0
+}
+DIV#left_tableList IMG {
+    PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; PADDING-TOP: 0px
+}
+DIV#left_tableList UL UL {
+    PADDING-LEFT: 0.1em; PADDING-BOTTOM: 0.1em; MARGIN-LEFT: 0em; BORDER-LEFT: #669999 0.1em solid; BORDER-BOTTOM: #669999 0.1em solid
+}
+BODY#bodyquerywindow {
+    PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DIV#querywindowcontainer {
+    PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px
+}
+DIV#querywindowcontainer FIELDSET {
+    MARGIN-TOP: 0px
+}
+UNKNOWN {
+    BORDER-RIGHT: transparent 1px solid; BORDER-TOP: transparent 1px solid; BORDER-LEFT: transparent 1px solid; BORDER-BOTTOM: transparent 1px solid
+}
+DIV#sqlquerycontainer {
+    FLOAT: left; WIDTH: 69%
+}
+DIV#tablefieldscontainer {
+    FLOAT: right; WIDTH: 29%
+}
+DIV#tablefieldscontainer SELECT {
+    WIDTH: 100%
+}
+TEXTAREA#sqlquery {
+    WIDTH: 100%
+}
+DIV#queryboxcontainer DIV#bookmarkoptions {
+    MARGIN-TOP: 0.5em
+}
+FIELDSET .formelement {
+    FLOAT: left; LINE-HEIGHT: 2.4em; MARGIN-RIGHT: 0.5em; WHITE-SPACE: nowrap
+}
+UNKNOWN {
+    WHITE-SPACE: normal
+}
+FIELDSET .formelement INPUT {
+    MARGIN-TOP: 0.5em; MARGIN-BOTTOM: 0.5em
+}
+FIELDSET .formelement SELECT {
+    MARGIN-TOP: 0.5em; MARGIN-BOTTOM: 0.5em
+}
+UNKNOWN {
+    MARGIN-TOP: auto; MARGIN-BOTTOM: auto; HEIGHT: auto
+}
+TABLE.calendar {
+    WIDTH: 100%
+}
+TABLE.calendar TD {
+    TEXT-ALIGN: center
+}
+TABLE.calendar TD A {
+    DISPLAY: block
+}
+TABLE.calendar TD A:hover {
+    BACKGROUND-COLOR: #f8e8a0
+}
+TABLE.calendar TH {
+    BACKGROUND-COLOR: #f8e8a0
+}
+TABLE.calendar TD.selected {
+    BACKGROUND-COLOR: #ffcc99
+}
+IMG.calendar {
+    BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none
+}
+FORM.clock {
+    TEXT-ALIGN: center
+}
+FIELDSET {
+    BACKGROUND-COLOR: #eeeeee
+}
+FIELDSET LEGEND {
+    BACKGROUND-COLOR: transparent
+}
+BUTTON {
+    DISPLAY: inline
+}
+TEXTAREA {
+    OVERFLOW: auto
+}
+#topmenucontainer {
+    BORDER-RIGHT: #fffbf0 1px solid; BORDER-TOP: #fffbf0 1px solid; BORDER-LEFT: #fffbf0 1px solid; BORDER-BOTTOM: #fffbf0 1px solid
+}
+UL#topmenu {
+    PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+UL#topmenu LI {
+    PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; VERTICAL-ALIGN: middle; PADDING-TOP: 0px
+}
+#topmenu IMG {
+    VERTICAL-ALIGN: middle; MARGIN-RIGHT: 0.1em
+}
+.tab {
+    PADDING-RIGHT: 0.2em; DISPLAY: block; PADDING-LEFT: 0.2em; PADDING-BOTTOM: 0px; MARGIN: 0.2em 0.2em 0px; PADDING-TOP: 0.2em; WHITE-SPACE: nowrap
+}
+.tabcaution {
+    PADDING-RIGHT: 0.2em; DISPLAY: block; PADDING-LEFT: 0.2em; PADDING-BOTTOM: 0px; MARGIN: 0.2em 0.2em 0px; PADDING-TOP: 0.2em; WHITE-SPACE: nowrap
+}
+.tabactive {
+    PADDING-RIGHT: 0.2em; DISPLAY: block; PADDING-LEFT: 0.2em; PADDING-BOTTOM: 0px; MARGIN: 0.2em 0.2em 0px; PADDING-TOP: 0.2em; WHITE-SPACE: nowrap
+}
+SPAN.tab {
+    COLOR: #666666
+}
+SPAN.tabcaution {
+    COLOR: #ff6666
+}
+A.tabcaution {
+    COLOR: #ff0000
+}
+A.tabcaution:hover {
+    COLOR: #ffffff; BACKGROUND-COLOR: #ff0000
+}
+#topmenu {
+    PADDING-RIGHT: 0.3em; MARGIN-TOP: 0.5em; PADDING-LEFT: 0.3em; PADDING-BOTTOM: 0.1em; PADDING-TOP: 0.1em
+}
+UL#topmenu LI {
+    BORDER-BOTTOM: black 1pt solid
+}
+.tab {
+    BORDER-RIGHT: #e5e5e5 1pt solid; BORDER-TOP: #e5e5e5 1pt solid; BORDER-LEFT: #e5e5e5 1pt solid; BORDER-BOTTOM: 0px; BACKGROUND-COLOR: #eeeeee; border-radius-topleft: 0.4em; border-radius-topright: 0.4em; moz-border-radius-topleft: 0.4em; moz-border-radius-topright: 0.4em
+}
+.tabcaution {
+    BORDER-RIGHT: #e5e5e5 1pt solid; BORDER-TOP: #e5e5e5 1pt solid; BORDER-LEFT: #e5e5e5 1pt solid; BORDER-BOTTOM: 0px; BACKGROUND-COLOR: #eeeeee; border-radius-topleft: 0.4em; border-radius-topright: 0.4em; moz-border-radius-topleft: 0.4em; moz-border-radius-topright: 0.4em
+}
+.tabactive {
+    BORDER-RIGHT: #e5e5e5 1pt solid; BORDER-TOP: #e5e5e5 1pt solid; BORDER-LEFT: #e5e5e5 1pt solid; BORDER-BOTTOM: 0px; BACKGROUND-COLOR: #eeeeee; border-radius-topleft: 0.4em; border-radius-topright: 0.4em; moz-border-radius-topleft: 0.4em; moz-border-radius-topright: 0.4em
+}
+A.tab:hover {
+    PADDING-RIGHT: 0.4em; PADDING-LEFT: 0.4em; PADDING-BOTTOM: 0.2em; MARGIN: 0px; PADDING-TOP: 0.2em; TEXT-DECORATION: none
+}
+A.tabcaution:hover {
+    PADDING-RIGHT: 0.4em; PADDING-LEFT: 0.4em; PADDING-BOTTOM: 0.2em; MARGIN: 0px; PADDING-TOP: 0.2em; TEXT-DECORATION: none
+}
+.tabactive {
+    PADDING-RIGHT: 0.4em; PADDING-LEFT: 0.4em; PADDING-BOTTOM: 0.2em; MARGIN: 0px; PADDING-TOP: 0.2em; TEXT-DECORATION: none
+}
+.tabactive:hover {
+    PADDING-RIGHT: 0.4em; PADDING-LEFT: 0.4em; PADDING-BOTTOM: 0.2em; MARGIN: 0px; PADDING-TOP: 0.2em; TEXT-DECORATION: none
+}
+A.tab:hover {
+    BACKGROUND-COLOR: #e5e5e5
+}
+.tabactive {
+    BACKGROUND-COLOR: #e5e5e5
+}
+SPAN.tab {
+    CURSOR: url(./themes/original/img/error.ico), url(.././themes/original/img/error.ico), default
+}
+SPAN.tabcaution {
+    CURSOR: url(./themes/original/img/error.ico), url(.././themes/original/img/error.ico), default
+}
+TABLE CAPTION {
+    PADDING-RIGHT: 0.5em; PADDING-LEFT: 0.5em; PADDING-BOTTOM: 0.1em; MARGIN: 0.1em; VERTICAL-ALIGN: top; PADDING-TOP: 0.1em
+}
+TABLE TH {
+    PADDING-RIGHT: 0.5em; PADDING-LEFT: 0.5em; PADDING-BOTTOM: 0.1em; MARGIN: 0.1em; VERTICAL-ALIGN: top; PADDING-TOP: 0.1em
+}
+TABLE TD {
+    PADDING-RIGHT: 0.5em; PADDING-LEFT: 0.5em; PADDING-BOTTOM: 0.1em; MARGIN: 0.1em; VERTICAL-ALIGN: top; PADDING-TOP: 0.1em
+}
+TABLE TR.odd TH {
+    BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left
+}
+TABLE TR.odd {
+    BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left
+}
+TABLE TR.even TH {
+    BACKGROUND-COLOR: #dddddd; TEXT-ALIGN: left
+}
+TABLE TR.even {
+    BACKGROUND-COLOR: #DDDDDD; TEXT-ALIGN: left
+}
+TABLE TR.marked TH {
+    BACKGROUND-COLOR: #f8e8a0}
+TABLE TR.marked {
+    BACKGROUND-COLOR: #f8e8a0}
+TABLE TR.odd:hover {
+    BACKGROUND-COLOR: #f8e8a0
+}
+TABLE TR.even:hover {
+    BACKGROUND-COLOR: #f8e8a0
+}
+TABLE TR.odd:hover TH {
+    BACKGROUND-COLOR: #f8e8a0
+}
+TABLE TR.even:hover TH {
+    BACKGROUND-COLOR: #f8e8a0
+}
+TABLE TR.hover TH {
+    BACKGROUND-COLOR: #f8e8a0
+}
+TABLE TR.hover {
+    BACKGROUND-COLOR: #f8e8a0
+}
+TABLE .value {
+    WHITE-SPACE: nowrap; TEXT-ALIGN: right
+}
+UNKNOWN {
+    WHITE-SPACE: pre
+}
+.value {
+    FONT-FAMILY: "Courier New", Courier, monospace
+}
+.value .attention {
+    FONT-WEIGHT: bold; COLOR: red
+}
+.value .allfine {
+    COLOR: green
+}
+DIV#serverstatus TABLE CAPTION A.top {
+    FLOAT: right
+}
+DIV#serverstatus DIV#serverstatusqueriesdetails TABLE {
+    FLOAT: left
+}
+DIV#serverstatus TABLE#serverstatustraffic {
+    FLOAT: left
+}
+DIV#serverstatus TABLE#serverstatusconnections {
+    FLOAT: left
+}
+#serverstatussection {
+    CLEAR: both
+}
+.clearfloat {
+    CLEAR: both
+}
+DIV#serverstatussection TABLE {
+    MARGIN-BOTTOM: 1em; WIDTH: 100%
+}
+DIV#serverstatussection TABLE .name {
+    WIDTH: 18em
+}
+DIV#serverstatussection TABLE .value {
+    WIDTH: 6em
+}
+DIV#serverstatus TABLE TBODY TD.descr A {
+    WHITE-SPACE: nowrap
+}
+DIV#serverstatus TABLE .tblFooters A {
+    WHITE-SPACE: nowrap
+}
+DIV#serverstatus DIV#statuslinks A:unknown {
+    content: '['
+}
+DIV#serverstatus DIV#sectionlinks A:unknown {
+    content: '['
+}
+DIV#serverstatus TABLE TBODY TD.descr A:unknown {
+    content: '['
+}
+DIV#serverstatus TABLE .tblFooters A:unknown {
+    content: '['
+}
+DIV#serverstatus DIV#statuslinks A:unknown {
+    content: ']'
+}
+DIV#serverstatus DIV#sectionlinks A:unknown {
+    content: ']'
+}
+DIV#serverstatus TABLE TBODY TD.descr A:unknown {
+    content: ']'
+}
+DIV#serverstatus TABLE .tblFooters A:unknown {
+    content: ']'
+}
+IMG.lightbulb {
+    CURSOR: pointer
+}
+BODY.loginform H1 {
+    DISPLAY: block; TEXT-ALIGN: center
+}
+BODY.loginform A.logo {
+    DISPLAY: block; TEXT-ALIGN: center
+}
+FORM.login LABEL {
+    FONT-WEIGHT: bolder; FLOAT: left; WIDTH: 10em
+}
+#maincontainer {
+    BACKGROUND-POSITION: right bottom; BACKGROUND-IMAGE: url(.././themes/original/img/logo_right.png); BORDER-BOTTOM: silver 1px solid; BACKGROUND-REPEAT: no-repeat
+}
+#mysqlmaininformation {
+    FLOAT: left; WIDTH: 49%
+}
+#pmamaininformation {
+    FLOAT: left; WIDTH: 49%
+}
+#maincontainer UL {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/item_ltr.png); VERTICAL-ALIGN: middle
+}
+#maincontainer LI {
+    MARGIN-BOTTOM: 0.3em
+}
+LI#li_create_database {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/b_newdb.png)
+}
+LI#li_select_lang {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/s_lang.png)
+}
+LI#li_select_mysql_collation {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/s_asci.png)
+}
+LI#li_select_mysql_charset {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/s_asci.png)
+}
+LI#li_select_theme {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/s_theme.png)
+}
+LI#li_server_info {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/s_host.png)
+}
+LI#li_user_info {
+
+}
+LI#li_mysql_status {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/s_status.png)
+}
+LI#li_mysql_variables {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/s_vars.png)
+}
+LI#li_mysql_processes {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/s_process.png)
+}
+LI#li_mysql_collations {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/s_asci.png)
+}
+LI#li_mysql_engines {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/b_engine.png)
+}
+LI#li_mysql_binlogs {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/s_tbl.png)
+}
+LI#li_mysql_databases {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/s_db.png)
+}
+LI#li_export {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/b_export.png)
+}
+LI#li_import {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/b_import.png)
+}
+LI#li_change_password {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/s_passwd.png)
+}
+LI#li_log_out {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/s_loggoff.png)
+}
+LI#li_pma_docs {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/b_docs.png)
+}
+LI#li_phpinfo {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/php_sym.png)
+}
+LI#li_pma_homepage {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/b_home.png)
+}
+LI#li_mysql_privilegs {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/s_rights.png)
+}
+LI#li_switch_dbstats {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/b_dbstatistics.png)
+}
+LI#li_flush_privileges {
+    LIST-STYLE-IMAGE: url(.././themes/original/img/s_reload.png)
+}
+#body_browse_foreigners {
+    MARGIN: 5px 5px 0px; BACKGROUND-COLOR: #fb7922
+}
+#bodyquerywindow {
+    BACKGROUND-COLOR: #fb7922
+}
+#bodythemes {
+    MARGIN: auto; WIDTH: 500px; TEXT-ALIGN: center
+}
+#bodythemes IMG {
+    BORDER-RIGHT: black 0.1em solid; BORDER-TOP: black 0.1em solid; BORDER-LEFT: black 0.1em solid; BORDER-BOTTOM: black 0.1em solid
+}
+#bodythemes A:hover IMG {
+    BORDER-RIGHT: red 0.1em solid; BORDER-TOP: red 0.1em solid; BORDER-LEFT: red 0.1em solid; BORDER-BOTTOM: red 0.1em solid
+}
+#fieldset_select_fields {
+    FLOAT: left
+}
+#selflink {
+    CLEAR: both; BORDER-TOP: silver 0.1em solid; MARGIN-TOP: 1em; DISPLAY: block; MARGIN-BOTTOM: 1em; WIDTH: 100%; TEXT-ALIGN: right
+}
+#table_innodb_bufferpool_usage {
+    FLOAT: left
+}
+#table_innodb_bufferpool_activity {
+    FLOAT: left
+}
+#div_mysql_charset_collations TABLE {
+    FLOAT: left
+}
+#div_table_order {
+    FLOAT: left; min-width: 48%
+}
+#div_table_rename {
+    FLOAT: left; min-width: 48%
+}
+#div_table_copy {
+    FLOAT: left; min-width: 48%
+}
+#div_table_options {
+    CLEAR: both; FLOAT: left; min-width: 48%
+}
+#qbe_div_table_list {
+    FLOAT: left
+}
+#qbe_div_sql_query {
+    FLOAT: left
+}
+.syntax_comment {
+    COLOR: #808000
+}
+.syntax_comment_mysql {
+
+}
+.syntax_comment_ansi {
+
+}
+.syntax_comment_c {
+
+}
+.syntax_digit {
+
+}
+.syntax_digit_hex {
+    COLOR: teal
+}
+.syntax_digit_integer {
+    COLOR: teal
+}
+.syntax_digit_float {
+    COLOR: aqua
+}
+.syntax_punct {
+    COLOR: fuchsia
+}
+.syntax_alpha {
+
+}
+.syntax_alpha_columnType {
+    COLOR: #ff9900
+}
+.syntax_alpha_columnAttrib {
+    COLOR: #0000ff
+}
+.syntax_alpha_reservedWord {
+    COLOR: #990099
+}
+.syntax_alpha_functionName {
+    COLOR: #ff0000
+}
+.syntax_alpha_identifier {
+    COLOR: black
+}
+.syntax_alpha_charset {
+    COLOR: #6495ed
+}
+.syntax_alpha_variable {
+    COLOR: #800000
+}
+.syntax_quote {
+    COLOR: #008000
+}
+.syntax_quote_double {
+
+}
+.syntax_quote_single {
+
+}
+.syntax_quote_backtick {
+
+}
+.syntax_indent0 {
+    MARGIN-LEFT: 0em
+}
+.syntax_indent1 {
+    MARGIN-LEFT: 1em
+}
+.syntax_indent2 {
+    MARGIN-LEFT: 2em
+}
+.syntax_indent3 {
+    MARGIN-LEFT: 3em
+}
+.syntax_indent4 {
+    MARGIN-LEFT: 4em
+}
+.syntax_indent5 {
+    MARGIN-LEFT: 5em
+}
+.syntax_indent6 {
+    MARGIN-LEFT: 6em
+}
+.syntax_indent7 {
+    MARGIN-LEFT: 7em
+}
+BODY {
+    FONT-SIZE: 10px; MARGIN: 5px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #fffbf0
+}
+PRE {
+    FONT-SIZE: 11px
+}
+TT {
+    FONT-SIZE: 11px
+}
+CODE {
+    FONT-SIZE: 11px
+}
+A:link {
+    FONT-SIZE: 10px; COLOR: #bb3902; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+A:visited {
+    FONT-SIZE: 10px; COLOR: #bb3902; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+A:active {
+    FONT-SIZE: 10px; COLOR: #bb3902; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+A:hover {
+    FONT-SIZE: 10px; COLOR: #cc0000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+TH {
+    FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; HEIGHT: 18px; BACKGROUND-COLOR: #C13536}
+
+TH.campo {
+    FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #FFFFFF; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; HEIGHT: 18px; BACKGROUND-COLOR: #C13536}	
+
+TH A:link {
+    COLOR: #000000; TEXT-DECORATION: underline
+}
+TH A:active {
+    COLOR: #000000; TEXT-DECORATION: underline
+}
+TH A:visited {
+    COLOR: #000000; TEXT-DECORATION: underline
+}
+TH A:hover {
+    COLOR: #cc0000; TEXT-DECORATION: none
+}
+.tblcomment {
+    FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #000099; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+TH.td {
+    FONT-WEIGHT: normal; BACKGROUND-IMAGE: none; COLOR: transparent; BACKGROUND-COLOR: transparent
+}
+TD {
+    FONT-SIZE: 10px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+FORM {
+    PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 10px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+SELECT {
+    FONT-SIZE: 10px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+TEXTAREA {
+    FONT-SIZE: 10px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+INPUT {
+    FONT-SIZE: 10px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+SELECT {
+    COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+TEXTAREA {
+    COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+INPUT.textfield {
+    FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+H1 {
+    FONT-WEIGHT: bold; FONT-SIZE: 18px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+H2 {
+    FONT-WEIGHT: bold; FONT-SIZE: 13px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+H3 {
+    FONT-WEIGHT: bold; FONT-SIZE: 12px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.nav:link {
+    COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.nav:visited {
+    COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.nav:active {
+    COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.nav:hover {
+    COLOR: #cc0000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.h1:link {
+    FONT-WEIGHT: bold; FONT-SIZE: 18px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.h1:active {
+    FONT-WEIGHT: bold; FONT-SIZE: 18px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.h1:visited {
+    FONT-WEIGHT: bold; FONT-SIZE: 18px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.h1:hover {
+    FONT-WEIGHT: bold; FONT-SIZE: 18px; COLOR: #cc0000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.h2:link {
+    FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.h2:active {
+    FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.h2:visited {
+    FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.h2:hover {
+    FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #cc0000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.drop:link {
+    COLOR: #cc0000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.drop:visited {
+    COLOR: #cc0000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.drop:active {
+    COLOR: #cc0000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.drop:hover {
+    COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #cc0000; TEXT-DECORATION: none
+}
+DFN {
+    FONT-STYLE: normal
+}
+DFN:hover {
+    CURSOR: help; FONT-STYLE: normal
+}
+.warning {
+    FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #cc0000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+TD.topline {
+    FONT-SIZE: 1px
+}
+TD.tab {
+    BORDER-RIGHT: #666 1px solid; BORDER-TOP: #999 1px solid; BORDER-LEFT: #999 1px solid; BORDER-BOTTOM: medium none; border-radius: 2px; moz-border-radius: 2px
+}
+TABLE.tabs {
+    BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: #666 1px solid
+}
+FIELDSET {
+    BORDER-RIGHT: #C13536 1px solid; PADDING-RIGHT: 0.5em; BORDER-TOP: #C13536 1px solid; PADDING-LEFT: 0.5em; PADDING-BOTTOM: 0.5em; BORDER-LEFT: #C13536 1px solid; PADDING-TOP: 0.5em; BORDER-BOTTOM: #C13536 1px solid
+}
+FIELDSET FIELDSET {
+    MARGIN: 0.8em
+}
+LEGEND {
+    PADDING-RIGHT: 2px; PADDING-LEFT: 2px; FONT-WEIGHT: bold; PADDING-BOTTOM: 2px; COLOR: #fb7922; PADDING-TOP: 2px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #ffffff; size: 10px
+}
+BUTTON.mult_submit {
+    BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; BACKGROUND-COLOR: transparent
+}
+.pdflayout {
+    BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; DISPLAY: none; OVERFLOW: hidden; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; POSITION: relative; BACKGROUND-COLOR: #ffffff
+}
+.pdflayout_table {
+    BORDER-RIGHT: #000000 1px dashed; BORDER-TOP: #000000 1px dashed; DISPLAY: inline; FONT-SIZE: 11px; Z-INDEX: 2; BACKGROUND: #ff9900; VISIBILITY: inherit; OVERFLOW: hidden; BORDER-LEFT: #000000 1px dashed; CURSOR: move; COLOR: #000000; BORDER-BOTTOM: #000000 1px dashed; POSITION: absolute
+}
+DIV.warning {
+    BORDER-RIGHT: #cc0000 1px solid; BORDER-TOP: #cc0000 1px solid; BORDER-LEFT: #cc0000 1px solid; WIDTH: 90%; BORDER-BOTTOM: #cc0000 1px solid
+}
+DIV.error {
+    BORDER-RIGHT: #cc0000 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #cc0000 1px solid; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; BORDER-LEFT: #cc0000 1px solid; WIDTH: 100%; PADDING-TOP: 0px; BORDER-BOTTOM: #cc0000 1px solid; BACKGROUND-COLOR: #ffffcc
+}
+DIV.error DIV.text {
+    PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+DIV.error DIV.head {
+    FONT-WEIGHT: bold; MARGIN: 0px; COLOR: #ffffff; BACKGROUND-COLOR: #cc0000
+}
+.print {
+    FONT-SIZE: 8pt; FONT-FAMILY: arial
+}
+.syntax {
+    FONT-SIZE: 10px; FONT-FAMILY: sans-serif
+}
+.syntax_comment {
+    PADDING-RIGHT: 4pt; PADDING-LEFT: 4pt
+}
+.syntax_digit {
+
+}
+.syntax_digit_hex {
+
+}
+.syntax_digit_integer {
+
+}
+.syntax_digit_float {
+
+}
+.syntax_punct {
+
+}
+.syntax_alpha {
+
+}
+.syntax_alpha_columnType {
+    TEXT-TRANSFORM: uppercase
+}
+.syntax_alpha_columnAttrib {
+    TEXT-TRANSFORM: uppercase
+}
+.syntax_alpha_reservedWord {
+    FONT-WEIGHT: bold; TEXT-TRANSFORM: uppercase
+}
+.syntax_alpha_functionName {
+    TEXT-TRANSFORM: uppercase
+}
+.syntax_alpha_identifier {
+
+}
+.syntax_alpha_charset {
+
+}
+.syntax_alpha_variable {
+
+}
+.syntax_quote {
+    WHITE-SPACE: pre
+}
+.syntax_quote_backtick {
+
+}
+.tblError {
+    BORDER-RIGHT: #cc0000 1px solid; BORDER-TOP: #cc0000 1px solid; BORDER-LEFT: #cc0000 1px solid; BORDER-BOTTOM: #cc0000 1px solid; BACKGROUND-COLOR: #ffffcc
+}
+.tblWarn {
+    BORDER-RIGHT: #cc0000 1px solid; BORDER-TOP: #cc0000 1px solid; BORDER-LEFT: #cc0000 1px solid; BORDER-BOTTOM: #cc0000 1px solid; BACKGROUND-COLOR: #ffffff
+}
+DIV.tblWarn {
+    BORDER-RIGHT: #cc0000 1px solid; BORDER-TOP: #cc0000 1px solid; BORDER-LEFT: #cc0000 1px solid; BORDER-BOTTOM: #cc0000 1px solid; BACKGROUND-COLOR: #ffffff
+}
+DIV.tblWarn {
+    PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; MARGIN: 2px 0px; WIDTH: 100%; PADDING-TOP: 5px
+}
+.tblHeaders {
+    FONT-WEIGHT: bold; COLOR: #ffffff; HEIGHT: 18px; BACKGROUND-COLOR: #fb7922
+}
+.tblHeaders A:link {
+    COLOR: #ffffcc; TEXT-DECORATION: underline
+}
+.tblHeaders A:visited {
+    COLOR: #ffffcc; TEXT-DECORATION: underline
+}
+.tblHeaders A:active {
+    COLOR: #ffffcc; TEXT-DECORATION: underline
+}
+.tblFooters A:link {
+    COLOR: #ffffcc; TEXT-DECORATION: underline
+}
+tblFooters A:visited {
+    COLOR: #ffffcc; TEXT-DECORATION: underline
+}
+tblFooters A:active {
+    COLOR: #ffffcc; TEXT-DECORATION: underline
+}
+.tblFooters {
+    FONT-WEIGHT: normal; COLOR: #ffffff; HEIGHT: 18px; BACKGROUND-COLOR: #f8e8a0
+}
+.tblHeaders A:hover {
+    COLOR: #ffffff; TEXT-DECORATION: none
+}
+tblFooters A:hover {
+    COLOR: #ffffff; TEXT-DECORATION: none
+}
+.tblHeadError {
+    FONT-WEIGHT: bold; COLOR: #ffffff; HEIGHT: 18px; BACKGROUND-COLOR: #cc0000
+}
+DIV.errorhead {
+    FONT-WEIGHT: bold; MARGIN: 0px; COLOR: #ffffff; TEXT-ALIGN: left
+}
+.tblHeadWarn {
+    FONT-WEIGHT: bold; COLOR: #000000; HEIGHT: 18px; BACKGROUND-COLOR: #ffcc00
+}
+DIV.warnhead {
+    FONT-WEIGHT: bold; MARGIN: 0px; COLOR: #ffffff; TEXT-ALIGN: left
+}
+.noPrivileges {
+    FONT-WEIGHT: bold; COLOR: #cc0000
+}
+.serverinfo {
+    PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; PADDING-BOTTOM: 10px; MARGIN: 0px; VERTICAL-ALIGN: middle; PADDING-TOP: 0px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; WHITE-SPACE: nowrap
+}
+HR {
+    BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; COLOR: #bb3902; BORDER-BOTTOM: 0px; HEIGHT: 1px; BACKGROUND-COLOR: #bb3902
+}
+.nav {
+    COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; HEIGHT: 22px; BACKGROUND-COLOR: #fb7922
+}
+.navSpacer {
+    WIDTH: 1px; HEIGHT: 16px; BACKGROUND-COLOR: #fffbf0
+}
+.navNormal {
+    PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 10px; PADDING-BOTTOM: 2px; COLOR: #000000; PADDING-TOP: 2px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; HEIGHT: 20px; BACKGROUND-COLOR: #fb7922
+}
+.navDrop {
+    PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 10px; PADDING-BOTTOM: 2px; COLOR: #fffbf0; PADDING-TOP: 2px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; HEIGHT: 20px; BACKGROUND-COLOR: #cc0000
+}
+.navActive {
+    PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 10px; PADDING-BOTTOM: 2px; COLOR: #000000; PADDING-TOP: 2px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; HEIGHT: 16px; BACKGROUND-COLOR: #fffbf0
+}
+.navNormal A:link {
+    COLOR: #fffbf0
+}
+.navNormal A:active {
+    COLOR: #fffbf0
+}
+.navNormal A:hover {
+    COLOR: #fffbf0
+}
+.navNormal A:visited {
+    COLOR: #fffbf0
+}
+.navDrop A:link {
+    COLOR: #fffbf0
+}
+.navDrop A:active {
+    COLOR: #fffbf0
+}
+.navDrop A:visited {
+    COLOR: #fffbf0
+}
+.navDrop A:hover {
+    COLOR: #fffbf0
+}
+.navActive A:link {
+    COLOR: #bb3902
+}
+.navActive A:active {
+    COLOR: #bb3902
+}
+.navActive A:visited {
+    COLOR: #bb3902
+}
+.navActive A:hover {
+    COLOR: #bb3902
+}
+IMG {
+    VERTICAL-ALIGN: middle
+}
+INPUT {
+    VERTICAL-ALIGN: middle
+}
+SELECT {
+    VERTICAL-ALIGN: middle
+}
+BUTTON {
+    VERTICAL-ALIGN: middle
+}
+.disabled {
+    FONT-SIZE: 10px; COLOR: #666666; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.disabled A:link {
+    FONT-SIZE: 10px; COLOR: #666666; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+disabled A:active {
+    FONT-SIZE: 10px; COLOR: #666666; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.disabled A:visited {
+    FONT-SIZE: 10px; COLOR: #666666; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.disabled A:hover {
+    FONT-SIZE: 10px; COLOR: #666666; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+TD.disabled {
+    BACKGROUND-COLOR: #cccccc
+}
+#TooltipContainer {
+    BORDER-RIGHT: #000000 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #000000 1px solid; PADDING-LEFT: 5px; FONT-SIZE: 10px; Z-INDEX: 99; VISIBILITY: hidden; PADDING-BOTTOM: 5px; OVERFLOW: auto; BORDER-LEFT: #000000 1px solid; WIDTH: 250px; COLOR: #006600; PADDING-TOP: 5px; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; POSITION: absolute; HEIGHT: 50px; BACKGROUND-COLOR: #ffffcc
+}

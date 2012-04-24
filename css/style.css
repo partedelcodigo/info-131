@@ -1,0 +1,694 @@
+/*This is the core style sheet of the site.*/
+
+div {}
+
+body 
+{
+    /*background-color: #C13536;*/
+    background-color: #f8bc00;
+    /*color: #666666;*/
+    color: #C13536;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: 9pt;
+    /*background-image: url(../graficos/fondo1.gif);*/
+    /*background-image: url(../graficos/fondoheader.gif);*/
+    margin: 0em;
+}
+
+#treeDiv1
+{
+    padding-left:10px;
+    padding-top:10px;
+    height:330px;
+    width:250px;
+    overflow:auto;
+}
+#datosusuario{
+    display:none;
+    height:330px;
+    border-bottom: 1px #f8bc00 solid;
+    border-left: 1px #f8bc00 solid;
+    border-right: 1px #f8bc00 solid;
+    border-top: 1px #f8bc00 solid;
+}
+
+#datosgenerales{
+    display:none;
+    height:330px;
+    border-bottom: 1px #f8bc00 solid;
+    border-left: 1px #f8bc00 solid;
+    border-right: 1px #f8bc00 solid;
+    border-top: 1px #f8bc00 solid;
+}
+
+#datosgrupo{
+    height:330px;
+    border-bottom: 1px #f8bc00 solid;
+    border-left: 1px #f8bc00 solid;
+    border-right: 1px #f8bc00 solid;
+    border-top: 1px #f8bc00 solid;
+}
+
+#header 
+{
+    background-color: #C13536;
+    border-bottom: 0px #f8bc00 solid;
+    text-align: center;
+    color: #C13536;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    /*background-image: url(../graficos/fondoheader.gif);*/
+    background-repeat: repeat;
+    background-position: 5%;
+}
+
+
+#header p 
+{
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 5px;
+    display: inline;
+    font-style: italic;
+    margin-left: 0%;
+}
+
+#status 
+{
+    background-color: #C13536;
+    text-align: right;
+    height:20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+}
+
+#status p 
+{
+    display: inline;
+    font-weight: bold;
+}
+
+
+#status p a:link , #status p a:visited
+{
+    color: #ffffff;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    text-decoration: none;
+    font-size:11pt;
+}
+
+#status p a:hover 
+{
+    color: #C13536;
+    /*background-color: #93dba6;*/
+    background-color: #f8bc00;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#status ul li a:hover 
+{
+    color: #000000;
+}
+
+#content 
+{
+    position: relative;
+    width: 779px;
+}
+
+#fecha p
+{
+    text-align: right;
+}
+
+#navbar 
+{
+    /*width: 150px;*/
+    width: 100%;
+}
+
+#navbar ul li 
+{
+    list-style-type: none;
+    margin: 0em;
+    padding: 0em;
+}
+
+#navbar ul 
+{
+    margin: 0em;
+    padding: 0em;
+}
+
+#navbar ul li a:link, #navbar ul li a:visited
+{
+    display: block;
+    text-decoration: none;
+    color: #C13536;
+    font-weight: normal;
+    font-size:0.85em;
+    text-align: center;
+    /*background-color: #C13536;*/
+    background-color: #f8bc00;
+    border-bottom: 1px #000000 solid;
+    border-left: 1px #000000 solid;
+    border-right: 1px #000000 solid;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 1px;
+}
+
+#navbar ul li a:hover 
+{
+    /*background-color: #93dba6;*/
+    background-color: #f8bc00;
+    color: #000000;
+    font-weight: bold;
+    font-size:9pt;
+}
+
+#navbar ul li a:active 
+{
+    /*background-color: #93dba6;*/
+    background-color: #f8bc00;
+    color: #000000;
+    font-weight: bold;
+    font-size:9pt;
+}
+
+#submenu 
+{
+    position:absolute;
+    width:84.5%;
+    left:120px;
+    top:-16px;
+    height:15px;
+}
+
+#submenu  ul {
+    background-color: #f8bc00;
+    text-align:left;
+    border-bottom: 1px #000000 solid;
+    border-left: 1px #000000 solid;
+    border-right: 1px #000000 solid;
+    padding-left:0px;
+    padding-bottom: 3px;
+    padding-top: 3px;}
+
+#submenu  ul li{
+    background-color: #f8bc00;
+    display:inline;
+    font-size:9pt;
+    color: #FFFFFF;
+    font-weight: normal;
+    list-style-type: none;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    border-right: 1px #000000 solid;}
+
+
+#submenu  ul li a:link , #submenu  ul li a:visited{
+    color: #FFFFFF;
+    font-weight: normal;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    text-decoration: none;
+}
+
+#submenu  ul li a:hover {
+    color: #C13536;
+    background-color: #93dba6;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+ul {}
+
+li {}
+
+#main-text {
+    background-color: #ffffff;
+    border-left: 1px #000000 solid;
+    border-bottom: 1px #000000 solid;
+    border-right: 1px #000000 solid;
+    margin-left: 120px;
+    padding: 2px;}
+
+#todo-text {
+    background-color: #ffffff;
+}
+
+#footer  p 
+{
+    /*background-image: url(../graficos/fondoheader.gif);*/
+    background-color: #ffffff;
+    border: 0.4px #000000 solid;
+    text-align: center;
+    font-size:9pt;
+    font-weight: normal;
+    color:#000000;
+    /*color:#FFFFFF;*/
+}
+
+label.etiqueta_verde
+{
+    /*background: #C13536;*/
+    background: #ffffff;		
+    border: 0.5px outset #f8bc00;
+    width: 1em;
+    color: #C13536;	
+    /*color: #FFFFFF;*/
+}
+
+label.etiqueta
+{
+    background: #FFFFFF;
+    border: 0.5px outset #f8bc00;
+    width: 1em;
+    color: #000000;
+}
+
+label.etiqueta:hover
+{
+    background: #f8bc00;
+    border: 0.5px outset #C13536;
+    width: 1em;
+    color: #FFFFFF;
+}
+
+input.boton
+{
+    /*background: #C13536;*/
+    background: #C13536;	
+    border: 1px solid #f8bc00;
+    width: 8.0em;
+    /*color: #FFFFFF;*/
+    color: #ffffff;
+}
+
+input.boton_fecha
+{
+    /*background: #C13536;*/
+    background: #C13536;		
+    /*border: 0.5px outset #C13536;*/
+    width:1.3em;
+    height:1.3em;
+    color: #FFFFFF;
+}
+
+
+#textovertical 
+{
+    vertical-align: middle;
+}
+
+h1 {
+    font-size: 14pt;
+    text-align: right;
+    font-style: italic;
+    letter-spacing: 5px;}
+
+h2 {
+    font-size: 12pt;
+    text-decoration: underline;}
+
+h3 {
+    font-size: 10pt;
+    text-align: center;
+    margin-bottom: 0.4em;
+    font-style: normal;}
+
+h5 {
+    font-size: 9pt;
+    text-align: center;
+    margin-bottom: 0.4em;
+    font-style: normal;}
+
+h6 
+{
+    font-size: 8pt;
+    margin-bottom: 0.4em;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-style: normal;
+}
+
+p {
+    font-size: 9pt;
+    text-align: justify;
+    line-height: 1.5em;}
+
+a {}
+
+a:link, a:visited 
+{
+    /*background-color: #95b7cd;*/
+    color: #C13536;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a:hover 
+{
+    color: #000000;
+}
+
+a:active 
+{
+    /*background-color: #3cc7f0;*/
+}
+
+table
+{
+    border: 1px outset #f8bc00;
+    font-size:10pt;
+}
+
+table td
+{
+    font-size:9pt;
+}
+table th 
+{
+    /*background: #C13536;*/
+    background: #C13536;
+    border: 1px outset #f8bc00;
+    color: #FFFFFF;
+}
+/*GAS_INI*/
+table td.center
+{
+    /*background: #C13536;*/
+    background: #FFAA36;
+    border: 1px outset #f8bc00;
+    color: #FFFFFF;		
+    text-align: center;			
+    font-weight: bold;
+}
+table td.center:hover
+{
+    /*background: #C13536;*/
+    background: #FFAA36;
+    border: 1px outset #f8bc00;
+    color: #FFFFFF;	
+    background-image: url(../img/imagenes/f_down.gif);
+    background-repeat: no-repeat;
+    background-position: right center;	
+    text-align: center;			
+    font-weight: bold;
+    cursor: pointer;
+}
+table td.down
+{
+    /*background: #C13536;*/
+    background: #FFAA36;
+    border: 1px outset #f8bc00;
+    color: #FFFFFF;	
+    background-image: url(../img/imagenes/down.png);
+    background-repeat: no-repeat;
+    background-position: right center;	
+    text-align: center;			
+    font-weight: bold;
+}
+table td.down:hover
+{
+    /*background: #C13536;*/
+    background: #FFAA36;
+    border: 1px outset #f8bc00;
+    color: #FFFFFF;	
+    background-image: url(../img/imagenes/f_down.gif);
+    background-repeat: no-repeat;
+    background-position: right center;	
+    text-align: center;			
+    font-weight: bold;
+    cursor: pointer;
+}
+table td.up
+{
+    /*background: #C13536;*/
+    background: #FFAA36;
+    border: 1px outset #f8bc00;
+    color: #FFFFFF;	
+    background-image: url(../img/imagenes/up.png);
+    background-repeat: no-repeat;
+    background-position: right center;	
+    text-align: center;			
+    font-weight: bold;	
+}
+table td.up:hover
+{
+    /*background: #C13536;*/
+    background: #FFAA36;
+    border: 1px outset #f8bc00;
+    color: #FFFFFF;	
+    background-image: url(../img/imagenes/f_up.gif);
+    background-repeat: no-repeat;
+    background-position: right center;	
+    text-align: center;			
+    font-weight: bold;
+    cursor: pointer;
+}
+/*GAS_FIN*/
+table td.nombre
+{
+    font-weight: bold;
+    font-size:10pt;
+    /*background-color:#75ab80;*/
+    background-color:#C13536;
+    color: #FFFFFF;
+    /*color: #ffffcc;*/
+    padding-top:8px;
+    padding-bottom:8px;
+}
+
+table tr.evento:hover
+{
+    background-color: #f8bc00;
+    color: #ffffff;
+}
+table tr.evento
+{
+    color: black;
+}
+table td.campo
+{
+    font-size:9pt;
+    padding-top:6px;
+    padding-bottom:6px;
+}
+
+table td.mensaje
+{
+    font-size:10pt;
+    background:#f8bc00;
+    border:1px #000000 solid;
+    padding-top:3px;
+    padding-bottom:3px;
+    color: #000000;
+}
+/*gaston*/
+table td.mensaje1
+{
+    font-size:7px;
+    font-weight:bold;
+    background:#f8bc00;
+    VERTICAL-ALIGN: top;
+    border:1px #000000 solid;
+    padding-top:3px;
+    padding-bottom:3px;
+    color: #000000;
+}
+input.texto
+{
+    font-size:9pt;
+    font-weight:bold;
+    border-style:solid;
+    border-color:#C13536;
+    border-width:1px;
+    color:#000000;
+}
+
+input.texto:hover
+{
+    font-size:9pt;
+    font-weight:bold;
+    border-color:#000000;
+    border-width:2px;
+    color:#000000;
+}
+
+table tr.fila_blanca
+{
+    font-size:9pt;
+    background:#FFFFFF;
+    color: #000000;
+}
+
+table tr.fila_naranja
+{
+    font-size:9pt;
+    background:#f8bc00;
+    color: #000000;
+}
+
+table tr.fila_gris
+{
+    font-size:9pt;
+    background:#DDDDDD;
+    color: #000000;
+}
+
+table tr.fila_verde
+{
+    font-size:9pt;
+    background:#f8bc00;
+    color: #000000;
+}
+
+table tr.fila_cafe
+{
+    font-size:9pt;
+    background:#f8bc00;
+    color: #C13536;
+    font-weight:600;
+
+}
+
+textarea.texto_area:hover
+{
+    font-size:9pt;
+    font-weight:bold;
+    border-color:#000000;
+    border-width:2px;
+    color:#000000;
+}
+
+textarea.texto_area{
+    font-size:9pt;
+    font-weight:bold;
+    border-style:solid;
+    border-color:#C13536;
+    border-width:1px;
+    color:#000000;
+}
+
+intput checkbox.casilla{
+    font-size:9pt;
+    font-weight:bold;
+    color:#000000;
+    border:#C13536 1px solid;
+    background-color: #FFFFFF;
+}
+
+intput checkbox.casilla:hover{
+    font-size:9pt;
+    font-weight:bold;
+    color:#000000;
+    border:#000000 1.5px solid;
+    background-color: #C13536;
+}
+
+intput radio.ratio{
+    MARGIN:  1.0em 0.5em 1.0em 1.0em;
+    BACKGROUND-COLOR: #FFFFFF;
+    BORDER: 1px solid #C13536;
+}
+
+intput radio.ratio:hover{
+    font-size:9pt;
+    font-weight:bold;
+    border-color:#000000;
+    border-width:2px;
+    color:#000000;
+}
+
+hr.linea{
+    color: #C13536;
+    background-color: #C13536;
+    height: 3px;
+}
+
+select,option{
+    font-size:9pt;
+    font-weight:bold;
+    color:#000000;
+    background-color: #FFFFFF;
+    border-bottom: #C13536 1px solid;
+    border-left: #C13536 1px solid;
+    border-right: #C13536 1px solid;
+    border-top: #C13536 1px solid;
+}
+select:hover,option:hover{
+    font-size:9pt;
+    font-weight:bold;
+    color:#000000;
+    border:#C13536 1.5px solid;
+    background-color: #FFFFFF;
+    border-bottom: #C13536 1px solid;
+    border-left: #C13536 1px solid;
+    border-right: #C13536 1px solid;
+    border-top: #C13536 1px solid;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+/*Para el manejo del Arbol*/
+.header1, h1{
+    color: #ffffff;
+    background: #C13536;
+    font-weight: bold;
+    font-family: Tahoma, Verdana;
+    font-size: 13px;
+    margin: 0px;
+    padding-left:2px;
+    height: 21px
+}
+
+.header2{
+    color: #FFFFFF;
+    background: #C13536;
+    font-weight: bold;
+    font-family: Tahoma, Verdana;
+    font-size: 11pt;
+}
+
+.intd{
+    color: #000000;
+    font-family: Tahoma, Verdana;
+    font-size: 11pt;
+    padding-left: 15px;
+}
+
+.wcell{
+    background: #FFFFFF;
+    vertical-align: top;
+}
+
+.ctrl{
+    font-family: Tahoma, Verdana, sans-serif;
+    font-size: 12px;
+    width: 100%;
+}
+
+.btnform{
+    border: 0px;
+    font-family: tahoma, verdana;
+    font-size: 12px;
+    background-color: #f8bc00;
+    width: 100%;
+    height:18px;
+    text-align: center;
+    cursor: hand;
+}
+
+.btn{
+    background-color: #C13536;
+    padding: 0px;
+}
