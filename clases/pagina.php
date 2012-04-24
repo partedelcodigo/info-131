@@ -3,17 +3,14 @@
 require_once('componentes/cabecera.php');
 require_once('componentes/pie_pagina.php');
 require_once('componentes/contenido.php');
-require_once('componentes/contenidoi.php');
+//require_once('componentes/contenidoi.php');
 require_once('componentes/barra_navegacion.php');
 require_once('componentes/menu.php');
-require_once('componentes/marcador.php');
 require_once('componentes/barra_configuracion.php');
-require_once('componentes/barra_configuracion1.php');
+//require_once('componentes/barra_configuracion1.php');
 require_once('componentes/datos_generales.php');
-require_once('componentes/servicios.php');
 require_once('componentes/cargando.php');
 require_once('componentes/logo.php');
-require_once('componentes/certificado.php');
 
 class PAGINA {
 
