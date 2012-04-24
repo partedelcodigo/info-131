@@ -3,7 +3,7 @@
 require_once('componentes/cabecera.php');
 require_once('componentes/pie_pagina.php');
 require_once('componentes/contenido.php');
-//require_once('componentes/contenidoi.php');
+require_once('componentes/contenidoi.php');
 require_once('componentes/barra_navegacion.php');
 require_once('componentes/menu.php');
 require_once('componentes/barra_configuracion.php');
@@ -37,14 +37,13 @@ class PAGINA {
         $this->contenido = new CONTENIDO;
         $this->contenidoi = new CONTENIDOI;
         $this->menu = new MENU;
-        $this->marcador = new MARCADOR;
         $this->barra = new BARRA_CONFIGURACION;
-        $this->barra1 = new BARRA_CONFIGURACION1;
-        $this->servicios = new SERVICIOS;
+        //$this->barra1 = new BARRA_CONFIGURACION1;
+        //$this->servicios = new SERVICIOS;
         $this->usuario = new PERSONA;
         $this->cargando = new CARGANDO;
         $this->barra_nav = new BARRA_NAVEGACION;
-        $this->certificado = new CERTIFICADO;
+        //$this->certificado = new CERTIFICADO;
         $this->logo = new LOGO;
 
         if (!empty($_GET['mod_id'])) {
@@ -163,11 +162,7 @@ class PAGINA {
         }
     }
 
-    function get_marcador() {
-        if (trim($this->modulo) <> 'login') {
-            $this->marcador->MARCADOR2();
-        }
-    }
+    
 
     function get_servicios() {
         if (trim($this->modulo) <> 'login') {
@@ -190,7 +185,7 @@ class PAGINA {
     function cargar_libs() {
         echo '<script type="text/javascript" language="JavaScript1.2" src="js/apytmenu.js"></script>';
         echo '<script language="javascript" type="text/javascript" src="js/prototype.js"></script>';
-        //echo '<script language="JavaScript" src="js/marcador.js"></script>';//gaston
+        
         echo '<script language="javascript" type="text/javascript" src="js/contenidoajax.js"></script>';
         echo '<script type="text/javascript" language="JavaScript1.2" src="js/config.js"></script>';
         echo '<script type="text/javascript" src="js/calendario.js"></script>';
@@ -248,18 +243,15 @@ class PAGINA {
         $this->get_cargando();
         /*         * Panel Central */
         $this->get_contenido();
-        $this->comprueba();
+        //$this->comprueba();//scaba backups automatico
         /*         * Barra Menu */
         $this->get_menu();
 
-        $this->get_certificado();
+        
         $this->get_logo();
 
         $grupo = $this->usuario->get_grupo();
-        /* if (($grupo=='REG'))
-          $this->get_marcador();
-          //comentado en fecha 16 de Diciembre del 2008 por Gastón
-         */
+        
         if (($grupo <> 'DOC')) {
             /*             * Barra panel superior derecho */
             $this->get_barra_configuracion();
