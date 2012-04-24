@@ -3,7 +3,7 @@
 include_once('config_img.php');
 //Deficion de parametros generales	
 define('_lenguaje', 'es.php');
-define('_rutaraiz', '../pcodigo');
+define('_rutaraiz', '../inf-131');
 define('_url', '');
 define('_fotos', 'fotos');
 define('_lib_conexion', 'comun_mysql.php');
