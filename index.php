@@ -19,5 +19,5 @@ $persona = new PERSONA;
 $persona->iniciar_session();
 $pagina = new PAGINA;
 $pagina->cargar_modulo();
-echo 'este es mieco';
+echo 'test master';
 ?>
