@@ -20,5 +20,5 @@ $persona->iniciar_session();
 $pagina = new PAGINA;
 $pagina->cargar_modulo();
 echo 'test master';
-echo 'este si funciona';
+echo 'este si funciona, sip funciona?';
 ?>
