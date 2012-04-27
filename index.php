@@ -18,4 +18,5 @@ $persona = new PERSONA;
 $persona->iniciar_session();
 $pagina = new PAGINA;
 $pagina->cargar_modulo();
+echo 'test master';
 ?>
