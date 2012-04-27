@@ -2,7 +2,8 @@
 require_once ('define/config.php');
 require_once ('clases/persona.php');
 require_once ('define/config_db.php');
-require_once (_rutaraiz . '/clases/bd/' . _lib_conexion);
+//--require_once (_rutaraiz . '/clases/bd/' . _lib_conexion);
+require_once ('clases/bd/' . _lib_conexion);
 require_once ('componentes/pantalla_inicial.php');
 if (isset($_SESSION['len']))
     require_once ('lenguaje/' . $_SESSION['len']);
@@ -18,4 +19,5 @@ $persona = new PERSONA;
 $persona->iniciar_session();
 $pagina = new PAGINA;
 $pagina->cargar_modulo();
+echo 'este es mieco';
 ?>
