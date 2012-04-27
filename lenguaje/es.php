@@ -101,10 +101,9 @@ Se definen etiquetas que permitan cambiar cualquier momento de idioma, en el tie
 	define('_cancelar','Cancelar');//Definicion de Cancelar
         */
 ###########################
-##	MENU					##
+##	MENU             ##
 ###########################
 define('_men_menu','Menu');
-define('_men_backups','Backups');
 define('_men_login','Inicio');
 define('_men_adm','Administraci&oacute;n'); 
 	define('_men_modu','Modulos');
@@ -114,48 +113,23 @@ define('_men_adm','Administraci&oacute;n');
 	define('_men_personal','Persona');	
 	define('_men_gusu','Grupos/Usuarios');
 define('_men_registro','Registro');
-	define('_men_persoalumno','Alumno');
-	define('_men_persotipodoc','Docente');
-	define('_men_persotipoadm','Administrativo');
-	define('_men_mof','Planificaci&oacute;n Ac&aacute;demico');
-	define('_men_regpag','Otros Ingresos');	
 	define('_men_Otros','Otros');
-		define('_men_regmat','Materia');
-		define('_men_regcar','Carrera');
-		define('_men_des','Descuento Docente');
-		define('_men_msj','Mensajes');
+		define('_men_reg_especie','Especie');
 define('_men_cam_contra','Cambio Contrase&ntilde;a');
 define('_men_reportes','Reportes');
-	define('_men_proce','Procesamiento de Horas Trabajadas Docente');
-	define('_men_proceadm','Procesamiento de Horas Trabajadas Administrativos');
-	define('_men_pago','Cuentas Pendientes');
-	define('_men_pago2','Cuentas Pendientes por Curso');
-	define('_men_planilla','Planillas');
-	define('_men_rep_marcado','Reporte de Marcado');
-	define('_men_rep_pago','Reporte de Pago');
-	define('_men_rep_horario','Reporte de Horarios');
-define('_men_rep_sql','Generador de Consultas');//2009-Feb-11//Gastón
-define('_men_contra','Contrase&ntilde;as');
-	define('_men_asipwd','Contrase&ntilde;a Docentes');
-define('_men_herramienta','Herramientas');
-	define('_men_reg_hor','Registro Marcado Docentes');
-	define('_men_update_mar','Modificar Marcados');
-	
 ###########################
-##	MODULOS					##
+##	MODULOS          ##
 ###########################
 ##$$$$$	ADMINISTRACION		$$$$$##
 	
 ##################### OTROS###############################
-	###########	Materia			####################
-	define('_regmat_bus_titulo','Busqueda de Materias');
-	define('_regmat_ing_titulo','Ingreso de Datos - Materia');
-	define('_regmat_car_id','Nombre de la Carrera:');
-	define('_regmat_nom','Nombre de la Materia:');
-	define('_regmat_des','Descripci&oacute;n de la Materia:');
+	###########	Especie		####################
+	define('_reg_especie_bus_titulo','Busqueda de Especies');
+	define('_reg_especie_ing_titulo','Ingreso de Especies');
+	define('_reg_especie_nom','Nombre de la Especie:');
+	define('_reg_especie_des','Descripci&oacute;n de la Especie:');
 
 ###########	Reporte SQL		####################
-define('_repsql_bus_titulo','Busqueda de Descuentos');
 define('_repsql_gen','Generar Query con Tabla: ');
 
 ###########	Modulo			####################
