@@ -1,4 +1,5 @@
 <?php
+echo 'test master1';
 require_once ('define/config.php');
 require_once ('clases/persona.php');
 require_once ('define/config_db.php');
@@ -20,4 +21,5 @@ $persona->iniciar_session();
 $pagina = new PAGINA;
 $pagina->cargar_modulo();
 echo 'test master';
+echo 'test master2';
 ?>
