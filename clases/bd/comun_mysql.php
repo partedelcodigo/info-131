@@ -158,6 +158,17 @@ class QUERY {
         } else {
             $usuario = "Unknown";
         }
+        
+        /**
+         * Changed by @Juan
+         * 
+         * To solve date warningn in the login screen
+         * 
+         * Before: ''
+         * Now: date_default_timezone_set('America/La_Paz');
+         */
+        date_default_timezone_set('America/La_Paz');
+        
         $cmd = "^\*\*\*|" .
                 "^ *INSERT|^ *DELETE|^ *UPDATE|^ *ALTER|^ *CREATE|" .
                 "^ *BEGIN|^ *COMMIT|^ *ROLLBACK|^ *GRANT|^ *REVOKE";
