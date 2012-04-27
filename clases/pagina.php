@@ -211,12 +211,6 @@ class PAGINA {
         echo '<script language="JavaScript" src="js/cambiar_form_tipo.js" type="text/javascript"></script>';
         echo '<script language="JavaScript" src="js/combo_dinamico.js" type="text/javascript"></script>';
         echo '<link rel="stylesheet" href="css/fich_emp.css" type="text/css" />';
-        if ($this->modulo == 'inscripcion2') {
-            echo '<SCRIPT language=javascript src="js/functions.js" type=text/javascript></SCRIPT>
-				<SCRIPT language=javascript src="js/tooltip.js" type=text/javascript></SCRIPT>
-				<LINK href="css/insc.style.css" type=text/css rel=stylesheet>
-				<LINK media=print href="css/insc.print.css" type=text/css rel=stylesheet>';
-        }
         //libreria para la subida de imagenes
         echo '<script language="JavaScript" src="js/sube.js"></script>';
         echo '<script language="javascript" type="text/javascript" src="js/jscripts/tiny_mce/tiny_mce.js"></script>';
