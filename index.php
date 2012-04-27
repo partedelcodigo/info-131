@@ -21,5 +21,5 @@ $persona->iniciar_session();
 $pagina = new PAGINA;
 $pagina->cargar_modulo();
 echo 'test master';
-echo 'test master2';
+echo 'este si funciona';
 ?>
