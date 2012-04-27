@@ -115,6 +115,7 @@ define('_men_adm','Administraci&oacute;n');
 define('_men_registro','Registro');
 	define('_men_Otros','Otros');
 		define('_men_reg_especie','Especie');
+		define('_men_tab_tes','EJEMPLO');
 define('_men_cam_contra','Cambio Contrase&ntilde;a');
 define('_men_reportes','Reportes');
 ###########################
@@ -128,6 +129,18 @@ define('_men_reportes','Reportes');
 	define('_reg_especie_ing_titulo','Ingreso de Especies');
 	define('_reg_especie_nom','Nombre de la Especie:');
 	define('_reg_especie_des','Descripci&oacute;n de la Especie:');
+	###########	TABLA TEST (prueba)		####################
+	define('_tab_tes_bus_titulo','Busqueda de Tabla prueba');
+	define('_men_tab_tes_ing_titulo','Ingreso de Prueba');
+	define('_men_tab_tes_caja','campo texto:');
+        define('_men_tab_tes_area','campo textarea:');
+        define('_men_tab_tes_rich','campo rich:');
+        define('_men_tab_tes_yes','campo yesno:');
+        define('_men_tab_tes_check','campo check:');
+        define('_men_tab_tes_radio','campo radio:');
+        define('_men_tab_tes_date','campo date:');
+	define('_men_tab_tes_combo_simple','campo combo simple:');
+        define('_men_tab_tes_combo_enlazado','campo combo enlazado:');
 
 ###########	Reporte SQL		####################
 define('_repsql_gen','Generar Query con Tabla: ');
