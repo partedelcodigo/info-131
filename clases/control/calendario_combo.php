@@ -8,7 +8,7 @@ class CALENDARIO_COMBO extends CONTROL
 		$this->nombre=$nombre;
 		$this->cant_caracteres=$cant_caracteres;
 		$this->tamano=$tamano;
-		$this->valor=$_POST[$nombre];
+		$this->valor=isset($_POST[$nombre])?$_POST[$nombre]:'';
 		$this->permiso=$permiso;
 		$this->exp_regular=$exp_regular;
 		$this->clase_css=$clase_css;
@@ -42,7 +42,7 @@ class CALENDARIO_COMBO extends CONTROL
 		echo $this->mensaje;
 		if(trim($this->get_valor())<>"")
 		{
-			/*valor del año*/
+			/*valor del aï¿½o*/
 			$valorano=substr($this->valor,0,4);
 			/*valor del mes*/
 			$valormes=substr($this->valor,5,strrpos($this->valor,"-"));

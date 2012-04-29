@@ -5,7 +5,7 @@ class ETIQUETA extends CONTROL {
         $this->nombre = $nombre;
         $this->cant_caracteres = $cant_caracteres;
         $this->tamano = $tamano;
-        $this->valor = $_POST[$nombre];
+        $this->valor=isset($_POST[$nombre])?$_POST[$nombre]:'';
         $this->permiso = $permiso;
         $this->exp_regular = $exp_regular;
         $this->clase_css = $clase_css;
@@ -28,6 +28,7 @@ class ETIQUETA extends CONTROL {
     }
 
     function dibujar() {
+        $mensaje='';
         if ($this->permiso == 2) {
             $mensaje = 'readonly';
         }
