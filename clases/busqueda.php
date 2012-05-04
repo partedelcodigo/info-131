@@ -18,7 +18,37 @@ class BUSQUEDA {
     var $controles;
     var $usuario;
     var $arreglo_permisos;
-
+    function inicializa_auto($mod_id) {
+        $q=new QUERY;
+        $aux=$this->id;
+        $sql="SELECT * from ad_elemento where ele_descripcion='$mod_id'";
+        //--echo "<br>--->" . $sql;
+        $q->consulta($sql);
+        
+        if($q->num_registros()>0) {
+            $r=$q->valores_row();
+            $llave=$r['ele_llave'];
+            $id_mod=$r['ele_id'];
+        }
+        $this->inicializa($mod_id, constant("_".$mod_id."_bus_titulo"), $mod_id, "form", "99%", $llave);
+        $sql="SELECT * from adm_registro where busqueda=1 AND ele_id='$id_mod'";
+        //--echo "<br>--->" . $sql;
+        $q->consulta($sql);
+        $valores=array();
+        if($q->num_registros()>0) {
+            while($r=$q->valores_row()){
+                $valores[0][]=$r['titulo'];//esto puede ser concatenado par alos idiomas
+                $valores[1][]=$r['campo'];
+                $valores[2][]=$r['ancho'];
+                $valores[3][]=$r['tipo'];
+                $valores[5][]=$r['relacion'];
+            }
+            
+        }
+        
+        
+        $this->cargar_parametros($valores);
+    }
     function inicializa($mod_id, $titulo, $tabla, $nombre, $ancho, $id, $tipo = '', $reg_pagina = 10) {
         $this->id = $id;
         $this->tabla = $tabla;

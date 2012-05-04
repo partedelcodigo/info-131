@@ -21,6 +21,37 @@ class FORMULARIO {
 
     }
 
+    function inicializa_auto($mod_id) {
+        $q=new QUERY;
+        $sql="SELECT * from ad_elemento where ele_descripcion='$mod_id'";
+        //--echo "<br>--->" . $sql;
+        $q->consulta($sql);
+
+        if($q->num_registros()>0) {
+            $r=$q->valores_row();
+            $llave=$r['ele_llave'];
+            $id_mod=$r['ele_id'];
+        }
+        //$this->inicializa($mod_id, _reg_especie_ing_titulo, array("ba_especie"), "formulario", _msg_comp, "100%");
+        $this->inicializa($mod_id, constant("_".$mod_id."_ing_titulo"), array($mod_id), "formulario", _msg_comp, "100%");
+        $sql="SELECT * from adm_registro where borrado=0 AND ele_id='$id_mod'";
+        //echo "<br>--->" . $sql;
+        $q->consulta($sql);
+        $valores=array();
+        if($q->num_registros()>0) {
+            while($r=$q->valores_row()){
+                $valores[0][]=$r['titulo'];//esto puede ser concatenado par alos idiomas
+                $valores[1][]=$mod_id.".".$r['campo'];
+                $valores[2][]=$r['ancho'];
+                $valores[3][]=$r['tipo'];
+                $valores[4][]=$r['requerido'];
+                $valores[5][]=$r['relacion'];
+            }
+            
+            $valores[9] = array("index.php?mod_id=$mod_id");
+        }
+        $this->cargar_valores($valores);
+    }
     function inicializa($mod_id,$titulo,$nombretablas,$nombre,$mensaje,$ancho) {
         $this->mod_id=$mod_id;
         $this->tituloform=$titulo;
@@ -91,6 +122,7 @@ class FORMULARIO {
                     break;
                 }
             case 7: {
+                    //echo "<br>--->" . _CONF_COMBOS;
                     for ($j=0;$j<count($this->valores[_CONF_COMBOS][$i]['valorradio']);$j++) {
                         $arreglo_valores[$j]=$this->valores[_CONF_COMBOS][$i]['valorradio'][$j];
                         /*echo '<script>alert("'.$arreglo_valores[$j].'")</script>';*/
@@ -336,8 +368,8 @@ class FORMULARIO {
                         /**Proceso para jalar los valores*/
                         /*echo'<script>alert("'.$sql[$i].'")</script>';*/
 
-                    } $arreglo
-                    =$sql;
+                    } 
+                    $arreglo=$sql;
                     //###########################################################
                     //REFERENCIA#######################333
                     //echo $antes[$j];
@@ -599,6 +631,7 @@ class FORMULARIO {
             }
             else {
                 $men='_'.$this->get_nombre_campo($this->valores[_NOMBRES][$i]);
+                echo "<br>--->" . $men;
                 if (defined($men)) {
                     $this->error.=_men_campo_invalido.' -> '.constant($men).'<br>';
                 }
