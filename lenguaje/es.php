@@ -114,7 +114,7 @@ define('_men_adm','Administraci&oacute;n');
 	define('_men_gusu','Grupos/Usuarios');
 define('_men_registro','Registro');
 	define('_men_Otros','Otros');
-		define('_men_reg_especie','Especie');
+		define('_men_mod_especies','Especies');
 		define('_men_tab_test','tab ejemplo');
 define('_men_cam_contra','Cambio Contrase&ntilde;a');
 define('_men_reportes','Reportes');
@@ -125,10 +125,10 @@ define('_men_reportes','Reportes');
 	
 ##################### OTROS###############################
 	###########	Especie		####################
-	define('_reg_especie_bus_titulo','Busqueda de Especies');
-	define('_reg_especie_ing_titulo','Ingreso de Especies');
-	define('_reg_especie_nom','Nombre de la Especie:');
-	define('_reg_especie_des','Descripci&oacute;n de la Especie:');
+	define('_mod_especies_bus_titulo','Busqueda de Especies');
+	define('_mod_especies_ing_titulo','Ingreso de Especies');
+	define('_mod_especies_nom','Nombre de la Especie:');
+	define('_mod_especies_des','Descripci&oacute;n de la Especie:');
 	###########	TABLA TEST (prueba)		####################
 	define('_tab_test_bus_titulo','Busqueda de Tabla prueba');
 	define('_tab_test_ing_titulo','Ingreso de Prueba');
