@@ -1,5 +1,5 @@
 <?php
-
+@header("Content-Type: text/html; charset=utf-8");
 require_once('componentes/cabecera.php');
 require_once('componentes/pie_pagina.php');
 require_once('componentes/contenido.php');
@@ -222,16 +222,32 @@ class PAGINA {
         if (!($this->usuario->registrado())) {
             $this->modulo = 'login';
         }
-        echo '<html>';
-        echo '<head>';
+        
+        /**
+         * Changed by @Juan
+         * Before: <html>
+         * Now:
+         *      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+         *      <html xmlns="http://www.w3.org/1999/xhtml">
+         */
+        $lf = "\n";
+        
+        echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'.$lf;
+        echo '<html xmlns="http://www.w3.org/1999/xhtml">'.$lf;
+        echo '<head>'.$lf;
         echo '<title>';
         echo _titulo;
-        echo '</title>';
-        echo '<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">';
+        echo '</title>'.$lf;
+        /**
+         * Changed by @Juan
+         * Before: <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+         * Now: <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+         */
+        echo '<meta http-equiv="content-type" content="text/html; charset=utf-8" />'.$lf;
         $this->cargar_libs();
         $this->get_estilo();
-        echo '</head>';
-        echo '<body>';
+        echo '</head>'.$lf;
+        echo '<body>'.$lf;
         /*         * Cabecera de la Pagina */
         $this->get_cabecera();
         $this->get_cargando();
