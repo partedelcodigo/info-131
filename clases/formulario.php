@@ -340,25 +340,66 @@ class FORMULARIO {
                     $modi2=array();
                     $campos1=array();
                     $modificado='';
+                    
                     for($i=0;$i<count($this->nombretablas);$i++) {
+                        
                         $sql[$i]='UPDATE '.$this->nombretablas[$i].' ';
                         $modificado.=$this->nombretablas[$i];
                         $campos=$this->get_lista_campos_tabla($this->nombretablas[$i],$this->valores[_NOMBRES]);
                         $campos1=$campos;
                         $sql[$i].='set ';
+                        
                         for($j=0;$j<count($campos);$j++) {		//echo"MODIFICAR";
                             //echo $campos[$j];
                             //echo $modi[$j];
+                            
                             $modi2[$j]=$this->controles[$j]->get_valor_control();
+                            
+                            # verifica si el campo actual es el la llave primaria de la tabla
                             if(trim($campos[$j])==trim($this->cpt)) {
                                 $sql[$i].=$campos[$j]."='".$this->id."',";
                             }
                             else {
+                                # verificamos el tipo campo
                                 switch ($this->controles[$j]->tipo) {
-                                    case 6:  $sql[$i].=$campos[$j]."='".md5($this->controles[$j]->get_valor_control())."',";
+                                    # para el campo de tipo password
+                                    case 6:  
+                                        $sql[$i].=$campos[$j]."='".md5($this->controles[$j]->get_valor_control())."',";
                                         break;
-                                    default:
+                                    
+                                    # para el campo de tipo upload file
+                                    case 22:
+                                        $e = $this->controles[$j] -> get_valor_control();
+                                        echo '<br>el array de archivos';
+                                        print_r($_FILES);
+                                        /*
+                                        $upload_class = new Upload_Files; 
+                                        $upload_class->temp_file_name = trim($_FILES['upload']['tmp_name']);
+                                        $upload_class->file_name = trim(strtolower($_FILES['upload']['name']));
+                                        $upload_class->upload_dir = "uploads/";
+                                        $upload_class->upload_log_dir = "uploads/upload_logs/";
+                                        $upload_class->max_file_size = 524288;
+                                        $upload_class->banned_array = array("");
+                                        $upload_class->ext_array = array(".jpg",".gif",".jpeg",".png");
 
+
+                                        $valid_ext = $upload_class->validate_extension();
+                                        $valid_size = $upload_class->validate_size();
+                                        $valid_user = $upload_class->validate_user();
+                                        $max_size = $upload_class->get_max_size();
+                                        $file_size = $upload_class->get_file_size();
+                                        $upload_directory = $upload_class->get_upload_directory();
+                                        $upload_log_directory = $upload_class->get_upload_log_directory();
+                                        $upload_file = $upload_class->upload_file_with_validation();
+                                        */
+                                        if ($e == "")
+                                            $sql[$i].=$campos[$j]."=null,";
+                                        else
+                                            $sql[$i].=$campos[$j]."='".$e."',";
+                                        
+                                        break;
+                                    
+                                    default:
                                         $e = $this->controles[$j]->get_valor_control();
                                         if ($e == "") {
                                             $sql[$i].=$campos[$j]."=null,";
@@ -370,16 +411,20 @@ class FORMULARIO {
                                 }
                             }
                         }
+                        
                         $sql[$i]=substr($sql[$i],0,strlen($sql[$i])-1);
                         $sql[$i].=' WHERE '.$this->cpt."='".$this->id."'";
 
                         if (isset($this->valores['where']) && $this->valores['where']) {
                             $sql[$i].= " and ".$this->valores['where'][0];
                         }
+                        
+                        echo '<br>consulta-> '; print_r($sql); exit;
                         /**Proceso para jalar los valores*/
                         /*echo'<script>alert("'.$sql[$i].'")</script>';*/
 
                     } 
+                    
                     $arreglo=$sql;
                     //###########################################################
                     //REFERENCIA#######################333
@@ -488,7 +533,7 @@ class FORMULARIO {
     }
 
     function dibujar_formulario($opcion) {
-        echo '<form method="post" name="'.$this->nombreform.'" action="'._PAG_PRINCIPAL.'?mod_id='.$this->mod_id.'&tarea='.$this->tarea.'&id='.$this->id.'&cpt='.$this->cpt.'">';
+        echo '<form method="post" name="'.$this->nombreform.'" enctype="multipart/form-data" action="'._PAG_PRINCIPAL.'?mod_id='.$this->mod_id.'&tarea='.$this->tarea.'&id='.$this->id.'&cpt='.$this->cpt.'">';
         echo '<table width="100%" border=1 cellpadding=0 cellspacing=0>';
         echo '<tr>';
         echo '<th class=title>&nbsp;&nbsp;'.$this->tituloform.'</th>';
