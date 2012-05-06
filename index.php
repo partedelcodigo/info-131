@@ -1,4 +1,5 @@
 <?php
+@header("Content-Type: text/html; charset=utf-8");
 require_once ('define/config.php');
 require_once ('clases/persona.php');
 require_once ('define/config_db.php');
