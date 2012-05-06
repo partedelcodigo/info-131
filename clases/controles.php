@@ -467,7 +467,7 @@ class CONTROLES {
             
             /* upload file */
             case 22:
-                $valido = $this->valido($this->caja_texto);
+                $valido = $this->valido($this->uploadFile);
                 break;
         }
         /* echo '<script>alert("'.$valido.'---'.$this->valor.'")</script>'; */
@@ -707,6 +707,5 @@ class CONTROLES {
         }
         return $valor;
     }
-
 }
 ?>
