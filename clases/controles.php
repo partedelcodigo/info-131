@@ -1,5 +1,5 @@
-<?PHP
-
+<?php
+@header("Content-Type: text/html; charset=utf-8");
 require_once("clases/control.php");
 require_once("clases/control/area_texto.php");
 require_once("clases/control/etiqueta.php");
@@ -18,6 +18,7 @@ require_once("clases/control/ventana_emergente2.php");
 require_once("clases/control/casilla.php");
 require_once("clases/control/hora_combo.php");
 require_once("define/config_control.php");
+require_once("clases/control/upload_file.php");
 /*
  * caja de texto oculta			7	--> 0 
  * caja de texto 					--> 1
@@ -141,6 +142,11 @@ class CONTROLES {
     var $caja_generica;
     var $combochange;
     var $horacombo;
+    
+    /**
+     * Variable para generar upload file 
+     */
+    private $uploadFile;
 
     /**
      * @function CONSTRUCTOR (instancia a los controles para su uso)
@@ -362,6 +368,12 @@ class CONTROLES {
                 $this->horacombo = new HORA_COMBO;
                 $this->horacombo->cargar_parametros($this->mensaje, $this->nombre, $this->cant_caracteres, $this->tamano, $this->permiso, $this->exp_regular, $this->clase_css, $this->defecto, $this->tip);
                 break;
+            
+            /* upload file */
+            case 22:
+                $this -> uploadFile = new upload_file;
+                $this -> uploadFile -> cargar_parametros($this->mensaje, $this->nombre, $this->cant_caracteres, $this->tamano, $this->permiso, $this->exp_regular, $this->clase_css, $this->defecto, $this->tip);
+                break;
         }
     }
 
@@ -452,6 +464,11 @@ class CONTROLES {
             case 21:
                 $valido = $this->valido($this->horacombo);
                 break;  
+            
+            /* upload file */
+            case 22:
+                $valido = $this->valido($this->caja_texto);
+                break;
         }
         /* echo '<script>alert("'.$valido.'---'.$this->valor.'")</script>'; */
         if ($valido <> 1) {
@@ -567,6 +584,11 @@ class CONTROLES {
                     $this->horacombo->dibujar();
                     break;
                 }
+                
+            /* upload file */
+            case 22: 
+                $this -> uploadFile -> dibujar();
+                break;
         }
     }
 
@@ -677,11 +699,14 @@ class CONTROLES {
                     $valor = $this->horacombo->get_valor();
                     break;
                 }
+                
+            /* upload file */
+            case 22:
+                $valor = $this -> uploadFile -> get_valor();
+                break;
         }
         return $valor;
     }
 
 }
-
-;
 ?>
