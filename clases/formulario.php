@@ -29,11 +29,22 @@ class FORMULARIO {
 
         if($q->num_registros()>0) {
             $r=$q->valores_row();
+            
+            /**
+             * Obtiene el nombre del campo que es primary key de la tabla $mod_id
+             */
             $llave=$r['ele_llave'];
+            
+            
             $id_mod=$r['ele_id'];
         }
+        
         //$this->inicializa($mod_id, _reg_especie_ing_titulo, array("ba_especie"), "formulario", _msg_comp, "100%");
         $this->inicializa($mod_id, constant("_".$mod_id."_ing_titulo"), array($mod_id), "formulario", _msg_comp, "100%");
+        
+        /**
+         * Obtiene informacion del modulo para generar el formulario
+         */
         $sql="SELECT * from adm_registro where borrado=0 AND ele_id='$id_mod'";
         //echo "<br>--->" . $sql;
         $q->consulta($sql);
