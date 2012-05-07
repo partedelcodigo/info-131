@@ -16,6 +16,7 @@ require_once ('clases/pagina.php');
 require_once ('clases/controles.php');
 require_once ('clases/bd/sql.php');
 
+
 $persona = new PERSONA;
 $persona->iniciar_session();
 $pagina = new PAGINA;
