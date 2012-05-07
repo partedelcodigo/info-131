@@ -370,28 +370,34 @@ class FORMULARIO {
                                     # para el campo de tipo upload file
                                     case 22:
                                         $e = $this->controles[$j] -> get_valor_control();
-                                        echo '<br>el array de archivos';
+                                        echo '<br>el array de archivos<pre>';
                                         print_r($_FILES);
-                                        /*
+                                        echo '</pre>';
+                                        
+                                        include_once('class_upload.php');
                                         $upload_class = new Upload_Files; 
-                                        $upload_class->temp_file_name = trim($_FILES['upload']['tmp_name']);
-                                        $upload_class->file_name = trim(strtolower($_FILES['upload']['name']));
+                                        $upload_class->temp_file_name = trim($_FILES['imagen']['tmp_name']);
+                                        $upload_class->file_name = trim(strtolower($_FILES['imagen']['name']));
                                         $upload_class->upload_dir = "uploads/";
                                         $upload_class->upload_log_dir = "uploads/upload_logs/";
-                                        $upload_class->max_file_size = 524288;
+                                        
+                                        # establecemos como tamaño maximo 8 megas
+                                        $upload_class->max_file_size = 8000000;
                                         $upload_class->banned_array = array("");
                                         $upload_class->ext_array = array(".jpg",".gif",".jpeg",".png");
 
 
-                                        $valid_ext = $upload_class->validate_extension();
-                                        $valid_size = $upload_class->validate_size();
-                                        $valid_user = $upload_class->validate_user();
-                                        $max_size = $upload_class->get_max_size();
-                                        $file_size = $upload_class->get_file_size();
-                                        $upload_directory = $upload_class->get_upload_directory();
-                                        $upload_log_directory = $upload_class->get_upload_log_directory();
+                                        //--$valid_ext = $upload_class -> validate_extension();
+                                        //--$valid_size = $upload_class->validate_size();
+                                        //--$valid_user = $upload_class->validate_user();
+                                        //--$max_size = $upload_class->get_max_size();
+                                        //--$file_size = $upload_class->get_file_size();
+                                        //--$upload_directory = $upload_class->get_upload_directory();
+                                        //--$upload_log_directory = $upload_class->get_upload_log_directory();
                                         $upload_file = $upload_class->upload_file_with_validation();
-                                        */
+                                        
+                                        echo '<br>el archivo se cargo '.$upload_file;
+                                        
                                         if ($e == "")
                                             $sql[$i].=$campos[$j]."=null,";
                                         else
@@ -419,7 +425,8 @@ class FORMULARIO {
                             $sql[$i].= " and ".$this->valores['where'][0];
                         }
                         
-                        echo '<br>consulta-> '; print_r($sql); exit;
+                        //--echo '<br>consulta-> '; print_r($sql); exit;
+                        
                         /**Proceso para jalar los valores*/
                         /*echo'<script>alert("'.$sql[$i].'")</script>';*/
 
