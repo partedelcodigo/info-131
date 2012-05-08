@@ -3,7 +3,7 @@
 /**
  * Description of upload_file
  *
- * @author juan
+ * @author the programator
  */
 class upload_file extends CONTROL {
     function cargar_parametros($mensaje, $nombre, $cant_caracteres, $tamano, $permiso, $exp_regular, $clase_css, $defecto, $tip = '') {
@@ -42,9 +42,9 @@ class upload_file extends CONTROL {
         # si la imagen fue cargada mostramos la imagen y no el control
         if( strlen( trim( $this->get_valor() ) ) > 0 ) {
             echo '<img src="/uploads/medium_'.$this->get_valor().'" width="'.ImageConfig::$ImageSizes['medium'][0].'" /><br />';
-            echo '<a href="javascript:changeFormElement(\'image_action\', 1)">Cambiar imagen</a> - <a href="javascript:changeFormElement(\'image_action\', 2)">Borrar imagen</a><br />';
+            echo '<a href="javascript:changeFormElement(\'image_action\', 1),toggleElement(\'hide_file\');">Cambiar imagen</a> - <a href="javascript:changeFormElement(\'image_action\', 2),changeVisibility(\'hide_file\',0)">Borrar imagen</a><br />';
             echo '<input type="hidden" name="image_action" id="image_action" value="0" />';
-            echo '<div style="display: none"><input type="file" name="'.$this -> nombre.'" /></div>';
+            echo '<div style="display: none" id="hide_file" name="hide_file"><input type="file" name="'.$this -> nombre.'" /></div>';
         }
         else {
             echo '<input type="file" ' . $mensaje . ' class="' .
