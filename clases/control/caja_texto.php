@@ -21,9 +21,12 @@ class CAJA_TEXTO extends CONTROL {
                 $this->valor = $this->defecto;
             }
         }
+        
+        
         if ($this->verificar() <> 1) {
             $this->valor = '';
         }
+        
         return $this->valor;
     }
 
