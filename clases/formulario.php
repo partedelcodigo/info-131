@@ -91,7 +91,7 @@ class FORMULARIO {
             $parametros_control['cant_caracteres']=(isset($this->valores[_CANT_CARACTERES][$i]))?$this->valores[_CANT_CARACTERES][$i]:'';
             $parametros_control['tamano']=(isset($this->valores[_TAMANO][$i]))?$this->valores[_TAMANO][$i]:'';
             $parametros_control['permiso']=(isset($this->valores[_PERMISO][$i]))?$this->valores[_PERMISO][$i]:'';
-            $parametros_control['css']=constant('_css_'.$this->valores[_TIPO][$i]);
+            $parametros_control['css'] = @constant( '_css_' . $this -> valores[_TIPO][$i] );
             $parametros_control['defecto']=(isset($this->valores[_VALORES_DEFECTO][$i]))?$this->valores[_VALORES_DEFECTO][$i]:'';
             $parametros_control['tipo']=$this->valores[_TIPO][$i];
             $parametros_control['tip']=(isset($this->valores[_REFERENCIA][$i]))?$this->valores[_REFERENCIA][$i]:'';
@@ -369,12 +369,12 @@ class FORMULARIO {
                                     
                                     # para el campo de tipo upload file
                                     case 22:
-                                        $e = $this->controles[$j] -> get_valor_control();
-                                        echo '<br>el array de archivos<pre>';
+                                        /*echo '<br>el array de archivos<pre>';
                                         print_r($_FILES);
-                                        echo '</pre>';
+                                        echo '</pre>';*/
                                         
                                         include_once('class_upload.php');
+                                        
                                         $upload_class = new Upload_Files; 
                                         $upload_class->temp_file_name = trim($_FILES['imagen']['tmp_name']);
                                         $upload_class->file_name = trim(strtolower($_FILES['imagen']['name']));
@@ -396,12 +396,14 @@ class FORMULARIO {
                                         //--$upload_log_directory = $upload_class->get_upload_log_directory();
                                         $upload_file = $upload_class->upload_file_with_validation();
                                         
-                                        echo '<br>el archivo se cargo '.$upload_file;
                                         
-                                        if ($e == "")
-                                            $sql[$i].=$campos[$j]."=null,";
+                                        if($upload_file) {
+                                            $newFileName = $upload_class -> file_name;
+                                            
+                                            $sql[$i].=$campos[$j]."='".$newFileName."',";
+                                        }
                                         else
-                                            $sql[$i].=$campos[$j]."='".$e."',";
+                                            $sql[$i].=$campos[$j]."=null,";
                                         
                                         break;
                                     
@@ -669,17 +671,22 @@ class FORMULARIO {
                     $this->dibujar_formulario(1);
                 }
             }
-            else {//echo 'hola';
+            else { //--echo 'hola';
+                
                 $arreglo_valores=$this->generar_sql('SEE');
+                /*echo '<pre>'; print_r($arreglo_valores); echo '</pre>';*/
+                
                 for($i=0;$i<count($this->controles);$i++) {
                     /*asignamos un valor por defecto y recargamos el control*/
                     $this->controles[$i]->defecto=$arreglo_valores[$i];
+                    
                     $antes[$i]=$arreglo_valores[$i];
                     //echo $arreglo_valores[$i];
                     //echo $antes[$i];
                     $this->controles[$i]->cargar_control();
                     /*echo '<script>alert("'.$arreglo_valores[$i].'");</script>';*/
                 }
+                
                 $this->dibujar_formulario(1);
             }
         }

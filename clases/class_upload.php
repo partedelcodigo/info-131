@@ -48,11 +48,14 @@ class Upload_Files {
     }
 
     function validate_size() {
+        //--echo '<br>entro a esta funcion ';
         $temp_file_name = trim($this->temp_file_name);
         $max_file_size = trim($this->max_file_size);
 
         if ($temp_file_name != '') {
             $size = filesize($temp_file_name);
+            
+            //--echo '<br>la comprobacion es '.$size.' > '.$max_file_size;
             if ($size > $max_file_size) {
                 return false;
             } else {
@@ -184,16 +187,18 @@ class Upload_Files {
 
     function get_upload_log_directory() {
         $upload_log_dir = trim($this->upload_log_dir);
+        
         if ($upload_log_dir) {
             $ud_len = strlen($upload_log_dir);
             $last_slash = substr($upload_log_dir, $ud_len - 1, 1);
+            
             if ($last_slash <> "/") {
                 $upload_log_dir = $upload_log_dir . "/";
             } else {
                 $upload_log_dir = $upload_log_dir;
             }
-
-            $handle = @opendir($upload_log_dir);
+            
+            $handle = opendir($upload_log_dir);
 
             if ($handle) {
                 $upload_log_dir = $upload_log_dir;
@@ -243,6 +248,12 @@ class Upload_Files {
     function upload_file_with_validation() {
         $temp_file_name = trim($this->temp_file_name);
         $file_name = trim(strtolower($this->file_name));
+        
+        $unsafeCharacters = array(" ","(", ")", "á", "é", "í", "ó", "ú");
+        $safeCharacters =   array("", "_", "_", "a", "e", "i", "o", "u");
+        
+        $file_name = str_replace( $unsafeCharacters , $safeCharacters , $file_name );
+        
         $upload_dir = $this->get_upload_directory();
         $upload_log_dir = $this->get_upload_log_directory();
         $file_size = $this->get_file_size();
@@ -257,18 +268,45 @@ class Upload_Files {
         $valid_user = $this->validate_user();        //<-Add On 
         $valid_size = $this->validate_size();        //<-Add On 
         $valid_ext = $this->validate_extension();    //<-Add On 	
-
+        //--echo '<br>entramos aqui 222 '.$valid_user.' OR '.$valid_size.' oR '.$valid_ext.'  OR '.$existing_file;
+        
         if (($upload_dir == "ERROR") OR ($upload_log_dir == "ERROR")) {
             return false;
         } elseif ((((!$valid_user) OR (!$valid_size) OR (!$valid_ext) OR ($existing_file)))) {
             return false;
         } else {
+            
             if (is_uploaded_file($temp_file_name)) {
                 if (move_uploaded_file($temp_file_name, $upload_dir . $file_name)) {
+                    
+                    # realizamos la redimencion de la imagen
+                    include_once('plugins/resize-class.php');
+                    include_once('define/config_img.php');
+                    
+                    # load image
+                    $resizeObj = new resize($upload_dir . $file_name);
+
+                    # Resize image (options: exact, portrait, landscape, auto, crop)
+                    $resizeObj->resizeImage( ImageConfig::$ImageSizes['large'][0] , ImageConfig::$ImageSizes['large'][1] , 'landscape' );
+
+                    # Save image
+                    $resizeObj -> saveImage($upload_dir . 'large_'.$file_name, 100);
+                    
+                    
+                    # Resize image (options: exact, portrait, landscape, auto, crop)
+                    $resizeObj->resizeImage( ImageConfig::$ImageSizes['medium'][0] , ImageConfig::$ImageSizes['medium'][1] , 'landscape' );
+
+                    # Save image
+                    $resizeObj->saveImage( $upload_dir . 'medium_' . $file_name , 100 );
+                    
+                    
                     $log = $upload_log_dir . $y . "_" . $m . "_" . $d . ".txt";
                     $fp = fopen($log, "a+");
                     fwrite($fp, "$ip-$cpu | $file_name | $file_size | $date | $time");
                     fclose($fp);
+                    
+                    # ponemos el nuvo nombre de la imagen en la variable $this -> file_name
+                    $this -> file_name = $file_name;
                     return true;
                 } else {
                     return false;
