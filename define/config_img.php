@@ -57,4 +57,15 @@ define('_img_habil', '<img src="graficos/exec.png" width=18 border=0>');
 // confirmación y rechazo de urrhh recuperación de horarios
 define('_img_aceptar', '<img src="graficos/apro.png" width=18 border=0>');
 define('_img_rechazar', '<img src="graficos/rech.png" width=18 border=0>');
+
+# constantes para las imagenes
+abstract class ImageConfig {
+    /**
+     * Array para definir las dimensiones de las imagenes y sus prefijos
+     * 
+     * @access public
+     * @static
+     */
+    public static $ImageSizes = array( 'large' => array( 300 , 250 ) , 'medium' => array( 200 , 132 ) );
+}
 ?>
