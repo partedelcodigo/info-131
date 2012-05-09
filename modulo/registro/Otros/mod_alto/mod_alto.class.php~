@@ -1,0 +1,49 @@
+<?php
+
+class ModAlto {
+
+    var $codigo;
+    var $nombreModulo;
+    
+    function ModAlto() {
+        $this->nombreModulo="mod_calidad";
+    }
+
+    function ingresar() {
+        require_once("clases/formulario.php");
+        $formz = new FORMULARIO();
+        $formz->inicializa_auto($this->nombreModulo);
+        $formz->mostrar_formulario();
+    }
+
+    function modificar() {
+        require_once("clases/formulario.php");
+        $formz = new FORMULARIO();
+        $formz->inicializa_auto($this->nombreModulo);
+        $formz->mostrar_formulario(1);
+    }
+
+    function ver() {
+        require_once("clases/formulario.php");
+        $formz = new FORMULARIO();
+        $formz->inicializa_auto($this->nombreModulo);
+        $formz->ver_formulario();
+    }
+
+    function eliminar() {
+        require_once("clases/formulario.php");
+        $formu = new FORMULARIO();
+        $tabla = array($this->nombreModulo);
+        $formu->inicializa($this->nombreModulo, "eliminado", $tabla, "form", "", "100%");
+        $formu->eliminar_formulario();
+        $valores[9] = array("index.php?mod_id=".$this->nombreModulo);
+    }
+
+    function busqueda() {
+        require_once("clases/busqueda.php");
+        $b = new BUSQUEDA();
+        $b->inicializa_auto($this->nombreModulo);
+        $b->mostrar_busqueda();
+    }
+}
+?>
