@@ -12,6 +12,8 @@ require_once('componentes/datos_generales.php');
 require_once('componentes/cargando.php');
 require_once('componentes/logo.php');
 
+require_once('clases/mod_base.php');
+
 class PAGINA {
 
     var $modulo;
