@@ -1,5 +1,4 @@
-<?PHP
-
+<?php
 class CONTROL {
 
     /**
@@ -106,6 +105,4 @@ class CONTROL {
     }
 
 }
-
-;
 ?>
