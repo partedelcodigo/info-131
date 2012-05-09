@@ -87,7 +87,7 @@ class CONTROL {
             } else {
                 if (trim($this->exp_regular) <> "") {
                     //echo ereg($this->exp_regular,$cadena);
-                    if (ereg($this->exp_regular, $this->valor)) {
+                    if(@ereg($this->exp_regular, $this->valor)) {
                         return true;
                     } else {
                         return false;
