@@ -1,4 +1,8 @@
 <?php
+@header("Content-Type: text/html; charset=utf-8");
+
+require_once 'clases/StrFunc.php';
+
 class FORMULARIO {
     var $nombreform;
     var $nombretablas;
@@ -24,7 +28,7 @@ class FORMULARIO {
     function inicializa_auto($mod_id) {
         $q=new QUERY;
         $sql="SELECT * from ad_elemento where ele_descripcion='$mod_id'";
-        //--echo "<br>--->" . $sql;
+
         $q->consulta($sql);
 
         if($q->num_registros()>0) {
@@ -372,38 +376,108 @@ class FORMULARIO {
                                         /*echo '<br>el array de archivos<pre>';
                                         print_r($_FILES);
                                         echo '</pre>';*/
+                                        /*echo '<pre>';
+                                        print_r($_POST);
+                                        echo '</pre>';*/
+                                        //--exit;
                                         
-                                        include_once('class_upload.php');
+                                        $imageAction = (int) StrFunc::getp('image_action');
                                         
-                                        $upload_class = new Upload_Files; 
-                                        $upload_class->temp_file_name = trim($_FILES['imagen']['tmp_name']);
-                                        $upload_class->file_name = trim(strtolower($_FILES['imagen']['name']));
-                                        $upload_class->upload_dir = "uploads/";
-                                        $upload_class->upload_log_dir = "uploads/upload_logs/";
+                                        switch($imageAction) {
+                                            # carga la imagenes y retorna el nombre utilizado
+                                            case 0: # para nueva imagen
+                                                include_once('class_upload.php');
                                         
-                                        # establecemos como tamaño maximo 8 megas
-                                        $upload_class->max_file_size = 8000000;
-                                        $upload_class->banned_array = array("");
-                                        $upload_class->ext_array = array(".jpg",".gif",".jpeg",".png");
+                                                $upload_class = new Upload_Files; 
+                                                $upload_class->temp_file_name = trim($_FILES['imagen']['tmp_name']);
+                                                $upload_class->file_name = trim(strtolower($_FILES['imagen']['name']));
+                                                $upload_class->upload_dir = ImageConfig::$ImagePath."/";
+                                                $upload_class->upload_log_dir = ImageConfig::$ImagePath."/upload_logs/";
+
+                                                # establecemos como tamaño maximo 8 megas
+                                                $upload_class->max_file_size = 8000000;
+                                                $upload_class->banned_array = array("");
+                                                $upload_class->ext_array = array(".jpg",".gif",".jpeg",".png");
 
 
-                                        //--$valid_ext = $upload_class -> validate_extension();
-                                        //--$valid_size = $upload_class->validate_size();
-                                        //--$valid_user = $upload_class->validate_user();
-                                        //--$max_size = $upload_class->get_max_size();
-                                        //--$file_size = $upload_class->get_file_size();
-                                        //--$upload_directory = $upload_class->get_upload_directory();
-                                        //--$upload_log_directory = $upload_class->get_upload_log_directory();
-                                        $upload_file = $upload_class->upload_file_with_validation();
-                                        
-                                        
-                                        if($upload_file) {
-                                            $newFileName = $upload_class -> file_name;
+                                                //--$valid_ext = $upload_class -> validate_extension();
+                                                //--$valid_size = $upload_class->validate_size();
+                                                //--$valid_user = $upload_class->validate_user();
+                                                //--$max_size = $upload_class->get_max_size();
+                                                //--$file_size = $upload_class->get_file_size();
+                                                //--$upload_directory = $upload_class->get_upload_directory();
+                                                //--$upload_log_directory = $upload_class->get_upload_log_directory();
+                                                $upload_file = $upload_class->upload_file_with_validation();
+
+
+                                                if($upload_file) {
+                                                    $newFileName = $upload_class -> file_name;
+
+                                                    $sql[$i].=$campos[$j]."='".$newFileName."',";
+                                                }
+                                                else
+                                                    $sql[$i].=$campos[$j]."=null,";
+                                                
+                                                break;
                                             
-                                            $sql[$i].=$campos[$j]."='".$newFileName."',";
+                                            case 1: # para cambio de imagen
+                                                # borramos las imagenes previamente cargadas
+                                                $lastImage = StrFunc::getp('last_image');
+                                                    
+                                                # borramos la imagen relacionada
+                                                if ( @!unlink( ImageConfig::$ImagePath . '/' . $lastImage ) || @!unlink( ImageConfig::$ImagePath . '/medium_' . $lastImage ) ||
+                                                     @!unlink( ImageConfig::$ImagePath . '/large_' . $lastImage ) ) {
+                                                    //--echo '<br>ocurrio un error al borrado ';
+                                                }
+                                                
+                                                include_once('class_upload.php');
+                                        
+                                                $upload_class = new Upload_Files; 
+                                                $upload_class->temp_file_name = trim($_FILES['imagen']['tmp_name']);
+                                                $upload_class->file_name = trim(strtolower($_FILES['imagen']['name']));
+                                                $upload_class->upload_dir = ImageConfig::$ImagePath."/";
+                                                $upload_class->upload_log_dir = ImageConfig::$ImagePath."/upload_logs/";
+
+                                                # establecemos como tamaño maximo 8 megas
+                                                $upload_class->max_file_size = 8000000;
+                                                $upload_class->banned_array = array("");
+                                                $upload_class->ext_array = array(".jpg",".gif",".jpeg",".png");
+
+
+                                                //--$valid_ext = $upload_class -> validate_extension();
+                                                //--$valid_size = $upload_class->validate_size();
+                                                //--$valid_user = $upload_class->validate_user();
+                                                //--$max_size = $upload_class->get_max_size();
+                                                //--$file_size = $upload_class->get_file_size();
+                                                //--$upload_directory = $upload_class->get_upload_directory();
+                                                //--$upload_log_directory = $upload_class->get_upload_log_directory();
+                                                $upload_file = $upload_class->upload_file_with_validation();
+
+
+                                                if($upload_file) {
+                                                    $newFileName = $upload_class -> file_name;
+
+                                                    $sql[$i].=$campos[$j]."='".$newFileName."',";
+                                                }
+                                                else
+                                                    $sql[$i].=$campos[$j]."=null,";
+                                                
+                                                break;
+                                                
+                                            # borra la imagen y pone el registro en NULL
+                                            case 2:
+                                                $lastImage = StrFunc::getp('last_image');
+                                                    
+                                                # borramos la imagen relacionada
+                                                if ( @!unlink( ImageConfig::$ImagePath.'/' . $lastImage ) || @!unlink( ImageConfig::$ImagePath.'/medium_' . $lastImage ) ||
+                                                     @!unlink( ImageConfig::$ImagePath.'/large_' . $lastImage ) ) {
+                                                    //--echo '<br>ocurrio un error al borrado ';
+                                                }
+
+                                                $sql[$i].=$campos[$j]."=null,";
+                                                
+                                                break;
                                         }
-                                        else
-                                            $sql[$i].=$campos[$j]."=null,";
                                         
                                         break;
                                     
@@ -488,13 +562,53 @@ class FORMULARIO {
                         $sql[$i]=substr($sql[$i],0,strlen($sql[$i])-1);
                         $sql[$i].=') values (';
                         for($j=0;$j<count($this->controles);$j++) {
+                            
                             if(trim($this->controles[$j]->get_valor_control())<>'') {
-                                if ($this->controles[$j]->tipo<>6) {
-                                    $sql[$i].="'".$this->controles[$j]->get_valor_control()."',";
+                                
+                                #verificamos la cadena de consulta dependiendo del tipo de campo
+                                switch($this->controles[$j]->tipo) {
+                                    case 6:
+                                        $sql[$i].="'".md5($this->controles[$j]->get_valor_control())."',";
+                                        break;
+                                    
+                                    default :
+                                        $sql[$i].="'".$this->controles[$j]->get_valor_control()."',";
+                                        break;
                                 }
-                                else {
-                                    $sql[$i].="'".md5($this->controles[$j]->get_valor_control())."',";
+                            }
+                            elseif ( $this -> controles[$j] -> tipo == 22 ) {
+                                # para el tipo de dato imagen
+                                include_once('class_upload.php');
+                                        
+                                $upload_class = new Upload_Files; 
+                                $upload_class->temp_file_name = trim($_FILES['imagen']['tmp_name']);
+                                $upload_class->file_name = trim(strtolower($_FILES['imagen']['name']));
+                                $upload_class->upload_dir = ImageConfig::$ImagePath."/";
+                                $upload_class->upload_log_dir = ImageConfig::$ImagePath."/upload_logs/";
+
+                                # establecemos como tamaño maximo 8 megas
+                                $upload_class->max_file_size = 8000000;
+                                $upload_class->banned_array = array("");
+                                $upload_class->ext_array = array(".jpg",".gif",".jpeg",".png");
+
+
+                                //--$valid_ext = $upload_class -> validate_extension();
+                                //--$valid_size = $upload_class->validate_size();
+                                //--$valid_user = $upload_class->validate_user();
+                                //--$max_size = $upload_class->get_max_size();
+                                //--$file_size = $upload_class->get_file_size();
+                                //--$upload_directory = $upload_class->get_upload_directory();
+                                //--$upload_log_directory = $upload_class->get_upload_log_directory();
+                                $upload_file = $upload_class->upload_file_with_validation();
+
+
+                                if($upload_file) {
+                                    $newFileName = $upload_class -> file_name;
+
+                                    $sql[$i].="'".$newFileName."',";
                                 }
+                                else
+                                    $sql[$i].=$campos[$j]."=null,";
                             }
                             else {
                                 //$sql[$i].="'null',";
@@ -508,25 +622,53 @@ class FORMULARIO {
                         /*echo '<script>alert("'.$sql[$i].'");</script>'; exit();*/
                         //echo $sql[$i];exit();
                     }
-                    //echo $sql[0]; exit;
+                    //--echo $sql[0]; exit;
                     $arreglo=$sql;
 
                     break;
                 }
             case 'DELETE': {
-                    $f = split("_",$this->cpt);
+                    /**
+                     * Changed by @Juan
+                     * Before: $f = split("_",$this->cpt);
+                     * Now: $f = explode("_",$this->cpt);
+                     */
+
+                    $f = explode("_",$this->cpt);
                     $sql=array();
                     $campos=$lista_de_campos;
-                    $tablas=$lista_de_tablas;
+                    $tablas = $lista_de_tablas;
+                    
+                    # inicializa las variables de control
+                    $this -> inicializa_auto( 'mod_especies' );
+                    
                     /**Se genera la lista de campos*/
                     for($i=0;$i<count($this->nombretablas);$i++) {
+                        
+                        # obtenemos los valores del registro actual
+                        $elements = $this -> generar_sql('SEE');
+                        
+                        # verificamos si tenemos un campo de tipo imagen
+                        for($j=0;$j<count($this->controles);$j++) {
+                            
+                            # si tenemos un campo de tipo imagen
+                            if ( $this -> controles[$j] -> tipo == 22 ) {
+                            
+                                # borramos la imagen relacionada
+                                if ( @!unlink( ImageConfig::$ImagePath.'/' . $elements[$j] ) || @!unlink( ImageConfig::$ImagePath.'/medium_' . $elements[$j] ) ||
+                                        @!unlink( ImageConfig::$ImagePath.'/large_' . $elements[$j] ) ) {
+                                    //--echo '<br>ocurrio un error al borrado ';
+                                }
+                            }
+                        }
+                        
                         $sql[$i]='DELETE FROM ';
                         $sql[$i].=$this->nombretablas[$i];
                         $sql[$i].=" where ".$this->cpt.'='."'$this->id'";
                     }
                     /**Se subdivide la lista de campos a las tablas que pertenecen*/
                     $arreglo=$sql;
-                    //echo $sql[0];
+                    //--echo $sql[0]; exit;
                     break;
                 }
         }
