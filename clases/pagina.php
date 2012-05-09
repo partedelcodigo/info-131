@@ -1,5 +1,5 @@
 <?php
-
+@header("Content-Type: text/html; charset=utf-8");
 require_once('componentes/cabecera.php');
 require_once('componentes/pie_pagina.php');
 require_once('componentes/contenido.php');
@@ -185,55 +185,75 @@ class PAGINA {
     }
 
     function cargar_libs() {
-        echo '<script type="text/javascript" language="JavaScript1.2" src="js/apytmenu.js"></script>';
-        echo '<script language="javascript" type="text/javascript" src="js/prototype.js"></script>';
+        $lf = "\n";
+        echo '<script type="text/javascript" language="JavaScript1.2" src="js/apytmenu.js"></script>'.$lf;
+        echo '<script language="javascript" type="text/javascript" src="js/prototype.js"></script>'.$lf;
         
-        echo '<script language="javascript" type="text/javascript" src="js/contenidoajax.js"></script>';
-        echo '<script type="text/javascript" language="JavaScript1.2" src="js/config.js"></script>';
-        echo '<script type="text/javascript" src="js/calendario.js"></script>';
-        echo '<script type="text/javascript" src="js/valida.js"></script>';
-        echo '<script type="text/javascript" src="js/eventos.js"></script>';
+        echo '<script language="javascript" type="text/javascript" src="js/contenidoajax.js"></script>'.$lf;
+        echo '<script type="text/javascript" language="JavaScript1.2" src="js/config.js"></script>'.$lf;
+        echo '<script type="text/javascript" src="js/calendario.js"></script>'.$lf;
+        echo '<script type="text/javascript" src="js/valida.js"></script>'.$lf;
+        echo '<script type="text/javascript" src="js/eventos.js"></script>'.$lf;
         // librería para cargar el lenguaje deseado
-        echo '<script type="text/javascript" src="js/calendario2.js"></script>';
+        echo '<script type="text/javascript" src="js/calendario2.js"></script>'.$lf;
         // librería que declara la función Calendar.setup, que ayuda a generar un calendario en unas pocas líneas de código
-        echo '<script type="text/javascript" src="js/calendariosetup.js"></script>';
-        echo '<script type="text/javascript" language="JavaScript1.2" src="js/stm31.js"></script>';
+        echo '<script type="text/javascript" src="js/calendariosetup.js"></script>'.$lf;
+        echo '<script type="text/javascript" language="JavaScript1.2" src="js/stm31.js"></script>'.$lf;
         // librería para jalar valores de una ventana emergente
-        echo '<script type="text/javascript" src="js/emergentebusqueda.js"></script>';
-        echo '<link rel="stylesheet" type="text/css" media="all" href="css/estilo.css" title="win2k-cold-1" />';
+        echo '<script type="text/javascript" src="js/emergentebusqueda.js"></script>'.$lf;
+        echo '<link rel="stylesheet" type="text/css" media="all" href="css/estilo.css" title="win2k-cold-1" />'.$lf;
         //GAS 2008-12-10 INI
-        echo '<link rel="stylesheet" type="text/css" media="screen" href="css/face.css" />';
+        echo '<link rel="stylesheet" type="text/css" media="screen" href="css/face.css" />'.$lf;
         //GAS 2008-12-10 FIN
-        echo '<script language="JavaScript" src="js/JSCookMenu.js"></script>';
-        echo '<link rel="stylesheet" href="css/theme.css" type="text/css">';
-        echo '<link rel="shortcut icon" href="graficos/favicon.ico" />';
-        echo '<script language="JavaScript" src="js/theme.js"></script>';
-        echo '<script language="Javascript" type="text/javascript" src="js/wz_tooltip.js"></script>';
-        echo '<script language="JavaScript" src="js/funciones.js" type="text/javascript"></script>';
-        echo '<script language="JavaScript" src="js/cambiar_form_tipo.js" type="text/javascript"></script>';
-        echo '<script language="JavaScript" src="js/combo_dinamico.js" type="text/javascript"></script>';
-        echo '<link rel="stylesheet" href="css/fich_emp.css" type="text/css" />';
+        echo '<script language="JavaScript" src="js/JSCookMenu.js"></script>'.$lf;
+        echo '<link rel="stylesheet" href="css/theme.css" type="text/css">'.$lf;
+        echo '<link rel="shortcut icon" href="graficos/favicon.ico" />'.$lf;
+        echo '<script language="JavaScript" src="js/theme.js"></script>'.$lf;
+        echo '<script language="Javascript" type="text/javascript" src="js/wz_tooltip.js"></script>'.$lf;
+        echo '<script language="JavaScript" src="js/funciones.js" type="text/javascript"></script>'.$lf;
+        
+        echo '<script language="javascript" type="text/javascript" src="js/functionsv2.js"></script>'.$lf;
+        
+        echo '<script language="JavaScript" src="js/cambiar_form_tipo.js" type="text/javascript"></script>'.$lf;
+        echo '<script language="JavaScript" src="js/combo_dinamico.js" type="text/javascript"></script>'.$lf;
+        echo '<link rel="stylesheet" href="css/fich_emp.css" type="text/css" />'.$lf;
         //libreria para la subida de imagenes
-        echo '<script language="JavaScript" src="js/sube.js"></script>';
-        echo '<script language="javascript" type="text/javascript" src="js/jscripts/tiny_mce/tiny_mce.js"></script>';
+        echo '<script language="JavaScript" src="js/sube.js"></script>'.$lf;
+        echo '<script language="javascript" type="text/javascript" src="js/jscripts/tiny_mce/tiny_mce.js"></script>'.$lf;
 
-        echo '<script language="javascript" type="text/javascript" src="js/ajax.js"></script>';
+        echo '<script language="javascript" type="text/javascript" src="js/ajax.js"></script>'.$lf;
     }
 
     function dibujar() {
         if (!($this->usuario->registrado())) {
             $this->modulo = 'login';
         }
-        echo '<html>';
-        echo '<head>';
+        
+        /**
+         * Changed by @Juan
+         * Before: <html>
+         * Now:
+         *      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+         *      <html xmlns="http://www.w3.org/1999/xhtml">
+         */
+        $lf = "\n";
+        
+        echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'.$lf;
+        echo '<html xmlns="http://www.w3.org/1999/xhtml">'.$lf;
+        echo '<head>'.$lf;
         echo '<title>';
         echo _titulo;
-        echo '</title>';
-        echo '<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">';
+        echo '</title>'.$lf;
+        /**
+         * Changed by @Juan
+         * Before: <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+         * Now: <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+         */
+        echo '<meta http-equiv="content-type" content="text/html; charset=utf-8" />'.$lf;
         $this->cargar_libs();
         $this->get_estilo();
-        echo '</head>';
-        echo '<body>';
+        echo '</head>'.$lf;
+        echo '<body>'.$lf;
         /*         * Cabecera de la Pagina */
         $this->get_cabecera();
         $this->get_cargando();

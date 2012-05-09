@@ -91,7 +91,7 @@ class FORMULARIO {
             $parametros_control['cant_caracteres']=(isset($this->valores[_CANT_CARACTERES][$i]))?$this->valores[_CANT_CARACTERES][$i]:'';
             $parametros_control['tamano']=(isset($this->valores[_TAMANO][$i]))?$this->valores[_TAMANO][$i]:'';
             $parametros_control['permiso']=(isset($this->valores[_PERMISO][$i]))?$this->valores[_PERMISO][$i]:'';
-            $parametros_control['css']=constant('_css_'.$this->valores[_TIPO][$i]);
+            $parametros_control['css'] = @constant( '_css_' . $this -> valores[_TIPO][$i] );
             $parametros_control['defecto']=(isset($this->valores[_VALORES_DEFECTO][$i]))?$this->valores[_VALORES_DEFECTO][$i]:'';
             $parametros_control['tipo']=$this->valores[_TIPO][$i];
             $parametros_control['tip']=(isset($this->valores[_REFERENCIA][$i]))?$this->valores[_REFERENCIA][$i]:'';
@@ -340,25 +340,74 @@ class FORMULARIO {
                     $modi2=array();
                     $campos1=array();
                     $modificado='';
+                    
                     for($i=0;$i<count($this->nombretablas);$i++) {
+                        
                         $sql[$i]='UPDATE '.$this->nombretablas[$i].' ';
                         $modificado.=$this->nombretablas[$i];
                         $campos=$this->get_lista_campos_tabla($this->nombretablas[$i],$this->valores[_NOMBRES]);
                         $campos1=$campos;
                         $sql[$i].='set ';
+                        
                         for($j=0;$j<count($campos);$j++) {		//echo"MODIFICAR";
                             //echo $campos[$j];
                             //echo $modi[$j];
+                            
                             $modi2[$j]=$this->controles[$j]->get_valor_control();
+                            
+                            # verifica si el campo actual es el la llave primaria de la tabla
                             if(trim($campos[$j])==trim($this->cpt)) {
                                 $sql[$i].=$campos[$j]."='".$this->id."',";
                             }
                             else {
+                                # verificamos el tipo campo
                                 switch ($this->controles[$j]->tipo) {
-                                    case 6:  $sql[$i].=$campos[$j]."='".md5($this->controles[$j]->get_valor_control())."',";
+                                    # para el campo de tipo password
+                                    case 6:  
+                                        $sql[$i].=$campos[$j]."='".md5($this->controles[$j]->get_valor_control())."',";
                                         break;
-                                    default:
+                                    
+                                    # para el campo de tipo upload file
+                                    case 22:
+                                        /*echo '<br>el array de archivos<pre>';
+                                        print_r($_FILES);
+                                        echo '</pre>';*/
+                                        
+                                        include_once('class_upload.php');
+                                        
+                                        $upload_class = new Upload_Files; 
+                                        $upload_class->temp_file_name = trim($_FILES['imagen']['tmp_name']);
+                                        $upload_class->file_name = trim(strtolower($_FILES['imagen']['name']));
+                                        $upload_class->upload_dir = "uploads/";
+                                        $upload_class->upload_log_dir = "uploads/upload_logs/";
+                                        
+                                        # establecemos como tamaño maximo 8 megas
+                                        $upload_class->max_file_size = 8000000;
+                                        $upload_class->banned_array = array("");
+                                        $upload_class->ext_array = array(".jpg",".gif",".jpeg",".png");
 
+
+                                        //--$valid_ext = $upload_class -> validate_extension();
+                                        //--$valid_size = $upload_class->validate_size();
+                                        //--$valid_user = $upload_class->validate_user();
+                                        //--$max_size = $upload_class->get_max_size();
+                                        //--$file_size = $upload_class->get_file_size();
+                                        //--$upload_directory = $upload_class->get_upload_directory();
+                                        //--$upload_log_directory = $upload_class->get_upload_log_directory();
+                                        $upload_file = $upload_class->upload_file_with_validation();
+                                        
+                                        
+                                        if($upload_file) {
+                                            $newFileName = $upload_class -> file_name;
+                                            
+                                            $sql[$i].=$campos[$j]."='".$newFileName."',";
+                                        }
+                                        else
+                                            $sql[$i].=$campos[$j]."=null,";
+                                        
+                                        break;
+                                    
+                                    default:
                                         $e = $this->controles[$j]->get_valor_control();
                                         if ($e == "") {
                                             $sql[$i].=$campos[$j]."=null,";
@@ -370,16 +419,21 @@ class FORMULARIO {
                                 }
                             }
                         }
+                        
                         $sql[$i]=substr($sql[$i],0,strlen($sql[$i])-1);
                         $sql[$i].=' WHERE '.$this->cpt."='".$this->id."'";
 
                         if (isset($this->valores['where']) && $this->valores['where']) {
                             $sql[$i].= " and ".$this->valores['where'][0];
                         }
+                        
+                        //--echo '<br>consulta-> '; print_r($sql); exit;
+                        
                         /**Proceso para jalar los valores*/
                         /*echo'<script>alert("'.$sql[$i].'")</script>';*/
 
                     } 
+                    
                     $arreglo=$sql;
                     //###########################################################
                     //REFERENCIA#######################333
@@ -488,7 +542,7 @@ class FORMULARIO {
     }
 
     function dibujar_formulario($opcion) {
-        echo '<form method="post" name="'.$this->nombreform.'" action="'._PAG_PRINCIPAL.'?mod_id='.$this->mod_id.'&tarea='.$this->tarea.'&id='.$this->id.'&cpt='.$this->cpt.'">';
+        echo '<form method="post" name="'.$this->nombreform.'" enctype="multipart/form-data" action="'._PAG_PRINCIPAL.'?mod_id='.$this->mod_id.'&tarea='.$this->tarea.'&id='.$this->id.'&cpt='.$this->cpt.'">';
         echo '<table width="100%" border=1 cellpadding=0 cellspacing=0>';
         echo '<tr>';
         echo '<th class=title>&nbsp;&nbsp;'.$this->tituloform.'</th>';
@@ -617,17 +671,22 @@ class FORMULARIO {
                     $this->dibujar_formulario(1);
                 }
             }
-            else {//echo 'hola';
+            else { //--echo 'hola';
+                
                 $arreglo_valores=$this->generar_sql('SEE');
+                /*echo '<pre>'; print_r($arreglo_valores); echo '</pre>';*/
+                
                 for($i=0;$i<count($this->controles);$i++) {
                     /*asignamos un valor por defecto y recargamos el control*/
                     $this->controles[$i]->defecto=$arreglo_valores[$i];
+                    
                     $antes[$i]=$arreglo_valores[$i];
                     //echo $arreglo_valores[$i];
                     //echo $antes[$i];
                     $this->controles[$i]->cargar_control();
                     /*echo '<script>alert("'.$arreglo_valores[$i].'");</script>';*/
                 }
+                
                 $this->dibujar_formulario(1);
             }
         }

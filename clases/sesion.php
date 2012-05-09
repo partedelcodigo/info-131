@@ -31,7 +31,12 @@ class SESION {
     }
 
     function existe_variable($nombre) {
-        if (session_is_registered($nombre)) {
+        /**
+         * Changed by @Juan
+         * Before: if (session_is_registered($nombre)) {
+         * Now: if (isset($_SESSION[nombre)) {
+         */
+        if (isset($_SESSION[$nombre])) {
             return true;
         } else {
             return false;

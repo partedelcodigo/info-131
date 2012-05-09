@@ -1,5 +1,5 @@
-<?PHP
-
+<?php
+@header("Content-Type: text/html; charset=utf-8");
 if (file_exists(_rutaraiz . '/clases/persona.php'))
     require_once(_rutaraiz . '/clases/persona.php');
 
@@ -36,6 +36,14 @@ class QUERY {
         $this->Clave = _passmysql;
         // Conectamos al servConexion_IDor
         $this->Conexion_ID = mysql_connect($this->ServConexion_IDor, $this->Usuario, $this->Clave);
+        
+        /**
+         * Added by @Juan
+         * Comment: Agregado para realizar conecciones con juego de caracteres en UTF-8
+         */
+        mysql_query("SET CHARACTER SET utf8");  
+        mysql_query("SET NAMES utf8");  
+        
         if (!$this->Conexion_ID) {
             $this->Error = "Ha fallado la conexion.";
             return 0;
@@ -177,7 +185,7 @@ class QUERY {
         $consulta = "INSERT INTO `ad_logs` (`log_accion`,`log_usuario`,`log_equipo`,`log_ip_equipo`,`log_fecha`,`log_hora`)
 					  VALUES ('$sql', '$usuario', '$cliente', '$ip', '" . date('Y-m-d') . "', '" . date('H:i:s') . "');";
 
-        if (eregi($cmd, $sql)) { //echo '-->'.$consulta;
+        if (@eregi($cmd, $sql)) { //echo '-->'.$consulta;
             mysql_query($consulta, $this->Conexion_ID);
         }
     }
