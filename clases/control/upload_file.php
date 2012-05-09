@@ -33,6 +33,21 @@ class upload_file extends CONTROL {
         
         return $this->valor;
     }
+    
+    /**
+     * Function que verifica si este control es de solo lectura
+     *
+     * @return boolean, retorna true si el control es de lectura
+     * 
+     * @access private
+     */
+    private function checkReadOnly() {
+        
+        if(strcmp(StrFunc::getg('tarea'),'ver') == 0)
+            return true;
+        
+        return false;
+    }
 
     function dibujar() {
         
@@ -42,15 +57,21 @@ class upload_file extends CONTROL {
         # si la imagen fue cargada mostramos la imagen y no el control
         if( strlen( trim( $this->get_valor() ) ) > 0 ) {
             echo '<img src="/uploads/medium_'.$this->get_valor().'" width="'.ImageConfig::$ImageSizes['medium'][0].'" /><br />';
-            echo '<a href="javascript:changeFormElement(\'image_action\', 1),toggleElement(\'hide_file\');">Cambiar imagen</a> - <a href="javascript:changeFormElement(\'image_action\', 2),changeVisibility(\'hide_file\',0)">Borrar imagen</a><br />';
-            echo '<input type="hidden" name="image_action" id="image_action" value="0" />';
-            echo '<div style="display: none" id="hide_file" name="hide_file"><input type="file" name="'.$this -> nombre.'" /></div>';
+            
+            if(!$this -> checkReadOnly()) {
+                echo '<a href="javascript:changeFormElement(\'image_action\', 1),changeVisibility(\'hide_file\',1),changeVisibility(\'delete_msg\',0);">Cambiar imagen</a> - 
+                    <a href="javascript:changeFormElement(\'image_action\', 2),changeVisibility(\'hide_file\',0),changeVisibility(\'delete_msg\',1)">Borrar imagen</a><br />';
+                echo '<input type="hidden" name="image_action" id="image_action" value="0" />';
+                echo '<input type="hidden" name="last_image" id="last_image" value="'.$this->get_valor().'" />';
+                echo '<div style="display: none" id="hide_file" name="hide_file"><input type="file" name="'.$this -> nombre.'" /></div>';
+                echo '<div style="display: none" id="delete_msg">Debe guardar el regitro para confirmar el borrado de la imagen.</div>';
+            }
         }
         else {
             echo '<input type="file" ' . $mensaje . ' class="' .
             $this->clase_css . '" name="' .
             $this->nombre . '" value="' .
-            $this->get_valor() . '">';
+            $this->get_valor() . '" >';
         }
         
         if ($this->tip != '') {
