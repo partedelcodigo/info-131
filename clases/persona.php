@@ -155,8 +155,9 @@ class PERSONA {
 
     function carga_lenguaje() {
         $lan = array('spanish' => 'es', 'english' => 'en');
-        echo "<br>------" . $lan[$this->lenguaje];
+        //echo "<br>------" . $lan[$this->lenguaje];
         $_SESSION['len'] = $lan[$this->lenguaje] . '.php';
+        $_SESSION['lan'] = $lan[$this->lenguaje];
         //define('_lenguaje1',$lan[$this->lenguaje].'.php');
         //echo "<br>------"._lenguaje1;
         //require_once ('lenguaje/'._lenguaje1);

@@ -114,7 +114,13 @@ define('_men_adm','Administraci&oacute;n');
 	define('_men_gusu','Grupos/Usuarios');
 define('_men_registro','Registro');
 	define('_men_Otros','Otros');
+                define('_men_mod_alto','Alto');
+                define('_men_mod_ancho','Ancho');
+                define('_men_mod_calidad','Calidad');
 		define('_men_mod_especies','Especies');
+                define('_men_mod_espesor','Espesor');
+                define('_men_mod_estado','Estado');
+                define('_men_mod_largo','Largo');
 		define('_men_tab_test','tab ejemplo');
 define('_men_cam_contra','Cambio Contrase&ntilde;a');
 define('_men_reportes','Reportes');
@@ -129,7 +135,25 @@ define('_men_reportes','Reportes');
 	define('_mod_especies_ing_titulo','Ingreso de Especies');
 	define('_mod_especies_nom','Nombre de la Especie:');
 	define('_mod_especies_des','Descripci&oacute;n de la Especie:');
-	###########	TABLA TEST (prueba)		####################
+        ###########	Alto		####################
+        define('_mod_alto_bus_titulo','Busqueda de Alto');
+	define('_mod_alto_ing_titulo','Ingreso de Alto');
+        ###########	Ancho		####################
+        define('_mod_ancho_bus_titulo','Busqueda de Ancho');
+	define('_mod_ancho_ing_titulo','Ingreso de Ancho');
+        ###########	Calidad		####################
+        define('_mod_calidad_bus_titulo','Busqueda de Calidad');
+	define('_mod_calidad_ing_titulo','Ingreso de Calidad');
+        ###########	Largo		####################
+        define('_mod_largo_bus_titulo','Busqueda de Largo');
+	define('_mod_largo_ing_titulo','Ingreso de Largo');
+        ###########	Estado		####################
+        define('_mod_estado_bus_titulo','Busqueda de Estado');
+	define('_mod_estado_ing_titulo','Ingreso de Estado');
+        ###########	Espesor		####################
+        define('_mod_espesor_bus_titulo','Busqueda de Espesor');
+	define('_mod_espesor_ing_titulo','Ingreso de Espesor');
+        ###########	TABLA TEST (prueba)		####################
 	define('_tab_test_bus_titulo','Busqueda de Tabla prueba');
 	define('_tab_test_ing_titulo','Ingreso de Prueba');
 	define('_tab_test_caja','campo texto:');
