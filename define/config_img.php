@@ -1,4 +1,4 @@
-<?PHP
+<?php
 
 /* IMAGENES A MOSTRAR */
 //Definicion de parametros graficos
@@ -67,5 +67,13 @@ abstract class ImageConfig {
      * @static
      */
     public static $ImageSizes = array( 'large' => array( 300 , 250 ) , 'medium' => array( 200 , 132 ) );
+    
+    /**
+     * Indica la ruta donde se almacenan las imagenes
+     *
+     * @access public
+     * @static
+     */
+    public static $ImagePath = 'uploads';
 }
 ?>
