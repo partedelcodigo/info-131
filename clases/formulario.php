@@ -842,10 +842,12 @@ class FORMULARIO {
                 $form_valido=true;
             }
             else {
-                $men='_'.$this->get_nombre_campo($this->valores[_NOMBRES][$i]);
-                echo "<br>--->" . $men;
-                if (defined($men)) {
-                    $this->error.=_men_campo_invalido.' -> '.constant($men).'<br>';
+                //--$men='_'.$this->get_nombre_campo($this->valores[_NOMBRES][$i]);//antes como constante
+                $men=$this->valores[_MENSAJES][$i];//nuevo gaston
+                //if (defined($men)) {
+                if (strlen($men)>0) {
+                    //$this->error.=_men_campo_invalido.' -> '.constant($men).'<br>';
+                    $this->error.=_men_campo_invalido.' -> '.$men.'<br>';
                 }
                 else {
                     echo '<h2>'._def_no.'</h2>';
