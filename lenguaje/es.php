@@ -122,6 +122,10 @@ define('_men_registro','Registro');
                 define('_men_mod_estado','Estado');
                 define('_men_mod_largo','Largo');
 		define('_men_tab_test','tab ejemplo');
+                
+                # para los romaneos
+		define('_men_mod_transaccion','Romaneo');
+                
 define('_men_cam_contra','Cambio Contrase&ntilde;a');
 define('_men_reportes','Reportes');
 ###########################
