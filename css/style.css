@@ -692,3 +692,26 @@ select:hover,option:hover{
     background-color: #C13536;
     padding: 0px;
 }
+
+/* styles added by @Juan */
+
+/* by the initial data on Romaneo Screen */
+div#initial_data {
+    margin: 10px auto 0 auto;
+    width: 400px;
+}
+
+div#initial_data fieldset {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+div#initial_data fieldset#unidades label {
+    float: left;
+    width: 70px;
+}
+
+div#initial_data input#continuar {
+    display: block;
+    margin: 0 auto 0 auto;
+}
