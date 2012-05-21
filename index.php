@@ -16,6 +16,24 @@ require_once ('clases/pagina.php');
 require_once ('clases/controles.php');
 require_once ('clases/bd/sql.php');
 
+/**
+ * Function to load automatically some class files
+ * 
+ * @param string $classname, class to be load
+ */
+function __autoload( $classname ) {
+    switch ( $classname ) {
+        case 'clsTinyButStrong':
+            include_once('plugins/tbs_us/tbs_class.php');
+            
+            break;
+        
+        case 'comboTabla':
+            include_once 'clases/control/comboTabla.php';
+            break;
+    }
+}
+
 
 $persona = new PERSONA;
 $persona->iniciar_session();
