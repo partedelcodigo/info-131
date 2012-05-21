@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Description of romaneo
  *
@@ -16,9 +15,19 @@ class ModRomaneo {
         extract($_GET);
         $paso=isset($paso)?$paso:1;
         $cad='';
+        
+        $template = new clsTinyButStrong;
+        
+        
         switch($paso){
             case 1://Primero se introducen nombre y otros seria mejor rescatar con tiny
-                $cad.='<form name="" action="?mod_id=mod_transaccion&tarea=ingresar&id=&cpt=id_transaccion&paso=2" method="post"><input type="text" name="tran_nombre" /><br /><input type="submit" value="Enviar"></form>';
+                # Load template with initial form
+                $template -> LoadTemplate('modulo/registro/mod_transaccion/_template_initial_data.html');
+                $template -> Show( TBS_NOTHING );
+                $contentTemp = $template -> Source;
+                
+                $comboCalidad = new comboTabla();
+                $cad.= $contentTemp;
                 break;
             case 2:
                 echo "<pre>";
@@ -40,5 +49,4 @@ class ModRomaneo {
         $b->mostrar_busqueda();
     }
 }
-
 ?>
