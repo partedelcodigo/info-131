@@ -706,7 +706,7 @@ div#initial_data fieldset {
     margin-bottom: 7px;
 }
 
-div#initial_data fieldset#unidades label {
+div#initial_data fieldset label {
     float: left;
     width: 70px;
 }
