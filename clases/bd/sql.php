@@ -1,5 +1,4 @@
-<?PHP
-
+<?php
 class SQL {
 
     var $s;
@@ -100,6 +99,4 @@ class SQL {
     }
 
 }
-
-;
 ?>
