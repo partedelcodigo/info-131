@@ -24,9 +24,13 @@ class ModRomaneo {
                 # Load template with initial form
                 $template -> LoadTemplate('modulo/registro/mod_transaccion/_template_initial_data.html');
                 $template -> Show( TBS_NOTHING );
-                $contentTemp = $template -> Source;
                 
-                $comboCalidad = new comboTabla();
+                # merge combo elements
+                $template -> MergeBlock('calidad',$this -> generateTableBlock( 'mod_calidad', array('id_calidad','nombre')));
+                $template -> MergeBlock('especie',$this -> generateTableBlock( 'mod_especies', array('id_especies','nombre')));
+                
+                
+                $contentTemp = $template -> Source;
                 $cad.= $contentTemp;
                 break;
             case 2:
@@ -40,6 +44,24 @@ class ModRomaneo {
         
         echo $cad;
         
+    }
+    
+    /**
+     * Function to generate select blocks with TBS
+     *
+     * @param string $tableName, table name
+     * @param array|mixed $fields, fields of table name
+     * 
+     * @return array|mixed, return an array with table's elements
+     * 
+     * @access private
+     */
+    private function generateTableBlock($tableName, $fields) {
+        $comboCalidad = new comboTabla();
+        $comboCalidad -> setTableName( array( $tableName ) );
+        $comboCalidad -> setTableFields( $fields );
+        
+        return $comboCalidad -> getElements();
     }
     
     function busqueda() {
