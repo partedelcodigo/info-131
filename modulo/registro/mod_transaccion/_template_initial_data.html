@@ -1,0 +1,43 @@
+<div id="initial_data">
+    <form action="?mod_id=mod_transaccion&tarea=ingresar&id=&cpt=id_transaccion&paso=2" method="post" name="initial_data" id="initial_data">
+        <label for="tran_nombre">Nombre del Romaneo: </label><input type="text" name="tran_nombre" id="tran_nombre" />
+        <fieldset title="Calidad / Especie">
+            <legend>Calidad / Especie</legend>
+            <label for="calidad">Calidad</label>
+            <select name="calidad" id="calidad">
+                <option value="0">Seleccione</option>
+                <option [calidad.id_calidad;htmlconv=no;block=option;noerr]>[calidad.nombre;htmlconv=no;block=option;noerr]</option>
+            </select><br />
+            <label for="especie">Especie</label>
+            <select name="especie" id="especie">
+                <option value="0">Seleccione</option>
+                <option [especie.id_especies;htmlconv=no;block=option;noerr]>[especie.nombre;htmlconv=no;block=option;noerr]</option>
+            </select>
+        </fieldset>
+        <fieldset title="Unidades" id="unidades">
+            <legend>Unidades de medida</legend>
+            <label for="ancho">Ancho</label>
+            <select name="ancho" id="ancho">
+                <option value="0">Seleccione</option>
+                <option value="1">Pulgada</option>
+                <option value="2">Metro</option>
+                <option value="3">Milímetro</option>
+            </select><br />
+            <label for="espesor">Espesor</label>
+            <select name="espesor" id="espesor">
+                <option value="0">Seleccione</option>
+                <option value="1">Pulgada</option>
+                <option value="2">Metro</option>
+                <option value="3">Milímetro</option>
+            </select><br />
+            <label for="largo">Largo</label>
+            <select name="largo" id="largor">
+                <option value="0">Seleccione</option>
+                <option value="4">Pie</option>
+                <option value="2">Metro</option>
+                <option value="3">Milímetro</option>
+            </select>
+        </fieldset>
+        <input type="submit" value="Continuar" name="continuar" id="continuar">
+    </form>
+</div>
